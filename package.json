@@ -1,0 +1,43 @@
+{
+    "name": "project-3-sequelize-starter-code",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+        "lint": "eslint --quiet . && cd client && npm run lint",
+        "fix": "eslint --fix . && cd client && npm run fix",
+        "client": "cd client && npm run start",
+        "install": "cd client && npm install",
+        "build": "cd client && npm run build",
+        "heroku-postbuild": "npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "2.4.3",
+        "compression": "^1.7.4",
+        "concurrently": "^5.3.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.0",
+        "express-jwt": "^6.0.0",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "^1.10.0",
+        "mysql2": "^1.6.5",
+        "sequelize": "^6.3.5"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.11.0",
+        "@typescript-eslint/parser": "^4.11.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.16.0",
+        "eslint-config-react-app": "^6.0.0",
+        "eslint-plugin-flowtype": "^5.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^4.2.0"
+    }
+}
