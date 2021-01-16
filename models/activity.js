@@ -2,24 +2,6 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Activity = sequelize.define('Activity', {
-        OwnerVote: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
-            validate: {
-                min: -1,
-                max: 1
-            }
-        },
-        InviteeVote: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 0,
-            validate: {
-                min: -1,
-                max: 1
-            }
-        },
         Image: {
             type: DataTypes.TEXT,
             allowNull: false,
