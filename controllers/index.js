@@ -13,8 +13,8 @@ router.use('/api/notes', noteRoutes);
 router.use('/api/users', userRoutes);
 router.use('/api/auth', authRoutes);
 router.use('/api/event', eventRoutes);
-router.use('/api/event', inviteRoutes);
-router.use('/api/event', voteRoutes);
+router.use('/api/invite', inviteRoutes);
+router.use('/api/vote', voteRoutes);
 
 // Export the router
 module.exports = router;
