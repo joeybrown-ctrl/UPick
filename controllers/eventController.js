@@ -23,27 +23,10 @@ router.get('/:id', isAuthenticated, function (req, res) {
 });
 
 /**
- * Note - Create
+ * Event - Create
  * Notice how we are also taking in the User Id! Important!
  * We need the isAuthenticated middleware in the route to have a user in the request
  */
-
-//This is for Controllers
-//endpoint = "/api/event" which is a POST request. SO: POST /api/event
-//data structure for event creation = fields of model (name(STRING), lat + long(DECIMAL), activityType(TEXT), entertainmentType(TEXT), pricePoint(TEXT), cuisine(TEXT)). DONE.
-
-//create invites: in the body we'll add an array of user IDs and create event invites from those IDs NOTE: add validation so we don't end up inviting ourselves
-//map the inviteEmails array to an array of invite create promises. We HAVE an array of promises and want to wait for them all to be done. We will wrap them in promise.all. DONE.
-
-//TODOS
-
-//set up activity generation: call different external APIs based off activityType. There can be one or more providers per activityType (provider is Zomato, etc). We can have multiple activity types with multiple providers.
-
-//generating cards from an array. Map the array to requests. We'll set up a registry containing multpiple activity types mapping to multiple prviders. We'll go one by one through the activity types and pick a random provider to the activity types.
-
-//we will need controllers for invite and vote models (simple GET routes).
-//Then we'll need accepting or rejecting an invite.
-//extend validation on model later on each column, refining the validation. Post-MVP.
 
 router.post('/', isAuthenticated, async function (req, res) {
 
@@ -82,5 +65,26 @@ router.post('/', isAuthenticated, async function (req, res) {
     }
 });
 
-// Defining methods for the booksController
 module.exports = router;
+
+
+//This is for Controllers
+//endpoint = "/api/event" which is a POST request. SO: POST /api/event
+//data structure for event creation = fields of model (name(STRING), lat + long(DECIMAL), activityType(TEXT), entertainmentType(TEXT), pricePoint(TEXT), cuisine(TEXT)). DONE.
+
+//create invites: in the body we'll add an array of user IDs and create event invites from those IDs NOTE: add validation so we don't end up inviting ourselves
+//map the inviteEmails array to an array of invite create promises. We HAVE an array of promises and want to wait for them all to be done. We will wrap them in promise.all. DONE.
+
+//we will need controllers for invite and vote models (simple GET routes). DONE.
+
+//TODOS
+
+//set up activity generation: call different external APIs based off activityType. There can be one or more providers per activityType (provider is Zomato, etc). We can have multiple activity types with multiple providers.
+
+//Either shelf movie idea as a nice-to-have, and just stick with food (Zomato). Or go with Fandango, rapidApi for Netflix, and Zomato -- pushing our APIs up to three.
+
+//generating cards from an array. Map the array to requests. We'll set up a registry containing multiple activity types mapping to multiple providers. We'll go one by one through the activity types and pick a random provider to the activity types.
+
+//Then we'll need accepting or rejecting an invite.
+
+//extend validation on model later on each column, refining the validation. Post-MVP.
