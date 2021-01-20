@@ -51,9 +51,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     User.associate = function (models) {
-    // Associating User with Notes
-    // When an User is deleted, also delete any associated Notes
-        User.hasMany(models.Note, {
+    // Associating User with Event
+    // When an User is deleted, also delete any associated Events
+        User.hasMany(models.Event, {
             onDelete: 'cascade'
         });
     };
