@@ -4,15 +4,22 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Event = sequelize.define('Event', {
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        body: {
-            type: DataTypes.TEXT,
+        latitude: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        longitude: {
+            type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
                 len: [1]
@@ -26,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        entertainment: {
+        entertainmentType: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {

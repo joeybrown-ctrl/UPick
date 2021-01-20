@@ -10,7 +10,8 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             validate: {
                 isIn:[['accepted','rejected', 'pending']]
-            }
+            },
+            defaultValue: 'pending'
         },
         inviteeEmail: {
             type: DataTypes.TEXT,
@@ -26,7 +27,9 @@ module.exports = function (sequelize, DataTypes) {
     // A Invite can't be created without an User due to the foreign key constraint
         Invite.belongsTo(models.Event, {
             foreignKey: {
-                allowNull: false
+                allowNull: false,
+                name: 'EventId',
+                as: 'Event'
             }
         });
     };
