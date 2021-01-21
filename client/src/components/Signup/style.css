@@ -12,13 +12,12 @@
     justify-content: center; 
 }
 
-.btn-begin {
+.card-div {
     display: flex;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0 12px 16px 0 #ff4747, 0 17px 50px 0 #ff4747;
-    /* width: 300px */
+    align-items: center
 }
 
-
-
+.title {
+    color:blue
+}

@@ -5,7 +5,7 @@ function Begin() {
 
     return (
         <div className='gradient'>
-            <Button className='button' size='lg'>
+            <Button className='begin shadow p-3 mb-5' variant='warning' size='lg'>
             Get Started
             </Button>  
         </div>

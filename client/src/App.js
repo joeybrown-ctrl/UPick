@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import axios from 'axios';
 import useAuth from './hooks/auth';
 import Begin from './components/Home/Home';
-import Signup from './pages/Signup';
+import Signup from './components/Signup/Signup';
 import Login from './pages/Login';
 import Notes from './pages/Notes';
 import MainNav from './components/Navbar/Navbar';
