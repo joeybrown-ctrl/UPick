@@ -9,6 +9,7 @@ const Navbar = () => {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to='/notes'>Notes</Link></li>
+                <li><Link to='/profile'>Profile</Link></li>
                 {isLoggedIn() ?
                     <>
                         <li>Hello, {getProfile().email}</li>
