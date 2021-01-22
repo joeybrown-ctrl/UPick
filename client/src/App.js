@@ -1,12 +1,14 @@
-import Navbar from './components/Navbar';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Begin from './components/Home/Home';
+import Signup from './components/Signup/Signup';
+import Login from './components/Login/Login';
 import Notes from './pages/Notes';
+import MainNav from './components/Navbar/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -33,10 +35,13 @@ function App() {
     
     return (
         <Router>
-            <Navbar />
+            <MainNav />
             <Switch>
-                <Route exact path='/'>
-                    <Home />
+                <Route exact path='/begin'>
+                    <Begin />
+                </Route>
+                <Route path='/profile'>
+                    <Profile />
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -47,6 +52,7 @@ function App() {
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
+                
             </Switch>
         </Router>
     );
