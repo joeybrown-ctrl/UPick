@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import Notes from './pages/Notes';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
                 <Route exact path='/begin'>
                     <Begin />
                 </Route>
+                <Route path='/profile'>
+                    <Profile />
+                </Route>
                 <Route path='/signup'>
                     <Signup />
                 </Route>
@@ -48,6 +52,7 @@ function App() {
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
+                
             </Switch>
         </Router>
     );

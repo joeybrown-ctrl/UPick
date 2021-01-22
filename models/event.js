@@ -4,16 +4,52 @@
 
 module.exports = function (sequelize, DataTypes) {
     const Event = sequelize.define('Event', {
-        title: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        body: {
+        latitude: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        longitude: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        //this is a comma-separated list (movie, restaurant -- these are the two main data providers)
+        activityType: {
             type: DataTypes.TEXT,
             allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        entertainmentType: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                len: [1]
+            }
+        },
+        pricePoint: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                len: [1]
+            }
+        },
+        cuisine: {
+            type: DataTypes.TEXT,
+            allowNull: true,
             validate: {
                 len: [1]
             }
@@ -21,7 +57,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Event.associate = function (models) {
-        // We're saying that a Event should belong to an User and the Invitee(user2)
+        // We're saying that a Event should belong to an User
         // A Event can't be created without an User due to the foreign key constraint
         // Needs Owner ID and Invitee ID (created multiples)
         Event.belongsTo(models.User, {
@@ -32,17 +68,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
 
-        Event.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false,
-                name: 'InviteeId',
-                as: 'Invitee'
-            }
-        });
-
-        Event.hasMany(models.Activity, {
-
-        });
+        // Event.hasMany(models.Activity, {
+        // });
     };
 
     return Event;
