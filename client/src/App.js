@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Notes from './pages/Notes';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
                 <Route exact path='/'>
                     <Home />
                 </Route>
+                <Route path='/profile'>
+                    <Profile />
+                </Route>
                 <Route path='/signup'>
                     <Signup />
                 </Route>
@@ -47,6 +51,7 @@ function App() {
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
+                
             </Switch>
         </Router>
     );
