@@ -4,7 +4,7 @@ import axios from 'axios';
 import useAuth from './hooks/auth';
 import Begin from './components/Home/Home';
 import Signup from './components/Signup/Signup';
-import Login from './pages/Login';
+import Login from './components/Login/Login';
 import Notes from './pages/Notes';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';

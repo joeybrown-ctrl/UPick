@@ -4,22 +4,21 @@ import useAuth from '../../hooks/auth';
 import { Card, Form, Button } from 'react-bootstrap';
 import './style.css';
 
-const Signup = () => {
-    const { signup, isLoggedIn } = useAuth();
+const Login = () => {
+    const { login, isLoggedIn } = useAuth();
     // History and location are hooks we can use to manipulate our page's history!
     const history = useHistory();
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     // For our redirector
-    const [redirectToLogin, toggleRedirect] = useState(false);
+    const [redirectToSignup, toggleRedirect] = useState(false);
     // This is the key part to our redirector. We can pull the prior location out here, if it exists
     const { from } = location.state || { from: { pathname: '/' } };
 
     const handleSubmit = event => {
         event.preventDefault();
-        signup(email, password).then(res => {
-            // Go back to whence you came!
+        login(email, password).then(res => {
             history.replace(from);
         });
     };
@@ -28,10 +27,10 @@ const Signup = () => {
         return <Redirect to={location.state || '/'} />;
     }
 
-    if (redirectToLogin) {
-        // If someone goes to login, this transfers the redirect
+    if (redirectToSignup) {
         return <Redirect to={{
-            pathname: '/login',
+            // If someone goes to signup, this transfers the redirect
+            pathname: '/signup',
             state: { from: from }
         }}
         />;
@@ -64,10 +63,9 @@ const Signup = () => {
             <div className='card-div'>
                 <Card style={styles.card}>
                     <Form>
-                        <h2 className='title'>Signup</h2>
-                        <Form.Group controlId="formBasicEmail" onSubmit={handleSubmit}>
+                        <h2 className='title'>Login Page</h2>
+                        <Form.Group controlId='formBasicEmail' onSubmit={handleSubmit}>
                             <br/>
-                            {/* <Form.Label style={styles.formText} htmlFor='email'>Email:</Form.Label> */}
                             <Form.Control
                                 style={styles.control}
                                 name='email'
@@ -88,17 +86,16 @@ const Signup = () => {
                                 onChange={event => setPassword(event.target.value)}
                             />
                             <br />
-                            <Button style={styles.btn} type='submit' block>Signup</Button>
+                            <Button style={styles.btn} type='submit' block>Login</Button>
                         </Form.Group>
-                        <p className='redirect'>
-                        Already have an account? 
-                        </p>
-                        <p className='link' onClick={() => toggleRedirect(true)}>Login Here</p>
+                        <p className='redirect'>Need an account?</p>
+                        <p className='link' onClick={() => toggleRedirect(true)}>Signup Here</p>
+            
                     </Form>
                 </Card>
             </div>
-        </div>
+        </div >
     );
 };
 
-export default Signup;
+export default Login;
