@@ -77,13 +77,15 @@ module.exports = router;
 
 //we will need controllers for invite and vote models (simple GET routes). DONE.
 
+//generating cards from an array. Map the array to requests. We'll set up a registry containing multiple activity types mapping to multiple providers. We'll go one by one through the activity types and pick a random provider to the activity types. NEARLY DONE.
+
+//Either shelf movie idea as a nice-to-have, and just stick with food (Zomato). Or go with Fandango, rapidApi for Netflix, and Zomato -- pushing our APIs up to three. FIGURED OUT.
+
 //TODOS
 
 //set up activity generation: call different external APIs based off activityType. There can be one or more providers per activityType (provider is Zomato, etc). We can have multiple activity types with multiple providers.
 
-//Either shelf movie idea as a nice-to-have, and just stick with food (Zomato). Or go with Fandango, rapidApi for Netflix, and Zomato -- pushing our APIs up to three.
-
-//generating cards from an array. Map the array to requests. We'll set up a registry containing multiple activity types mapping to multiple providers. We'll go one by one through the activity types and pick a random provider to the activity types.
+//Add providers to registry.js
 
 //Then we'll need accepting or rejecting an invite.
 

@@ -20,5 +20,9 @@ router.get('/:id', isAuthenticated, function(req, res) {
         .catch(err => res.status(422).json(err));
 });
 
+//create vote (POST route)
+//add logic to determine whether or not event is completed (join votes to activities onto events)
+//create algo to find out which activity user picked
+
 
 module.exports = router;
