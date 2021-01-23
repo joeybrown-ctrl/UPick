@@ -40,6 +40,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        movieGenre: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            validate: {
+                len: [1]
+            }
+        },
         pricePoint: {
             type: DataTypes.TEXT,
             allowNull: true,
