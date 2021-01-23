@@ -9,6 +9,7 @@ import Notes from './pages/Notes';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
+import YourPicks from './pages/YourPicks';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
                     </Route>
                     <Route path='/profile'>
                         <Profile />
+                    </Route>
+                    <Route path='/yourpicks'>
+                        <YourPicks />
                     </Route>
                     <Route path='/signup'>
                         <Signup />
