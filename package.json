@@ -17,10 +17,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-<<<<<<< HEAD
-=======
-
->>>>>>> 3b711f8849c712e98ce9ae29ea191f03ee09f7d5
         "axios": "^0.21.1",
         "@sendgrid/mail": "^7.4.2",
         "bcryptjs": "2.4.3",
