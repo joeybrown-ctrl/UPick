@@ -22,6 +22,7 @@ const MainNav = () => {
                             <>
                                 <Nav.Link href="/signup">Signup</Nav.Link>
                                 <Nav.Link href="/login">Login</Nav.Link>
+                                <Nav.Link href="/profile">Profile</Nav.Link>
                             </>
                         }
                         
