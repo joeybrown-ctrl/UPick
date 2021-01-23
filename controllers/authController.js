@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const util = require('util');
 const router = require('express').Router();
 const db = require('../models');
+const sgMail = require('@sendgrid/mail');
 
 const signAsync = util.promisify(jwt.sign);
 
@@ -10,7 +11,7 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         // Find user
-        const user = await db.User.scope('withPassword').findOne({ where: {email:email }});
+        const user = await db.User.scope('withPassword').findOne({ where: { email: email } });
         if (!user) {
             res.status(400).send('User not found.');
         }
@@ -50,6 +51,19 @@ router.post('/signup', async (req, res) => {
             email,
             password
         });
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        const msg = {
+            to: req.body.email, // Change to your recipient
+            from: 'u.pick.project@gmail.com', // Change to your verified sender
+            subject: 'Welcome to U-Pick',
+            text:
+                'Thank you for signing up with U-Pick. Your account is now activated.',
+            html:
+                '<strong>Thank you for signing up with U-Pick. Your account is now activated.</strong>',
+        };
+        await sgMail
+            .send(msg);
+
         if (!user) {
             res.status(400).send('Cannot create user.');
         }
@@ -76,3 +90,4 @@ router.post('/signup', async (req, res) => {
 });
 
 module.exports = router;
+
