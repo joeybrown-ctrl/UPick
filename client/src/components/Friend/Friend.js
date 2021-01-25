@@ -1,6 +1,6 @@
 import './style.css';
-import { Col, Card, Row, Form, FormControl, InputGroup, Image, Button } from 'react-bootstrap';
-
+import { Card, Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import FriendList from '../FriendList/FriendList';
 
 function Friend() {
 
@@ -27,22 +27,6 @@ function Friend() {
             backgroundColor: '#212f35',
             color: '#f9f9f9c9',
             border: '0'
-        },
-
-        icon: {
-            width: '40px',
-            height: '40px'
-        },
-
-        iconCol: {
-            paddingRight: '40px'
-        },
-
-        friendBtn: {
-            textAlign: 'left',
-            backgroundColor: '#212f35',
-            color: '#f9f9f9c9',
-            border: '0 solid #FFD217'
         },
 
         pick: {
@@ -74,66 +58,12 @@ function Friend() {
                     </Form>
                     <br/>
                     <div className="friend-list">
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <Row>
-                            <Col xs={1} style={styles.iconCol}>
-                                <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                            </Col>
-                            <br/>
-                            <Col >
-                                <Button block style={styles.friendBtn} >Friend Name</Button>
-                            </Col>
-                        </Row>
-                        <br/>
+                        <FriendList/>
+                        <FriendList/>
+                        <FriendList/>
+                        <FriendList/>
+                        <FriendList/>
+                        <FriendList/>
                         <Button style={styles.pick} type='submit' block>Start Your Pick</Button>
                         <br/>
                         <p className='invite'>Invite A Friend</p>

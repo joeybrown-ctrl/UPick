@@ -10,6 +10,7 @@ import Friend from './components/Friend/Friend';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
+import Event from './components/Event/Event';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
                 </Route>
                 <Route exact path='/friend'>
                     <Friend />
+                </Route>
+                <Route exact path='/event'>
+                    <Event/>
                 </Route>
                 <Route path='/profile'>
                     <Profile />
