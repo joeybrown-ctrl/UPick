@@ -11,6 +11,8 @@ import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
 import Event from './components/Event/Event';
+import YourPicks from './pages/YourPicks';
+
 
 
 function App() {
@@ -27,14 +29,14 @@ function App() {
         const { message } = error.toJSON();
         // If we had time, we could write our own custom method to the auth middleware
         // However, we are just gonna use their message.
-        if(message === 'Request failed with status code 401'){
+        if (message === 'Request failed with status code 401') {
             logout();
         }
         // Any status codes that falls outside the range of 2xx cause this function to trigger
         // Do something with response error
         return Promise.reject(error);
     });
-    
+
     return (
         <Router>
             <MainNav />
@@ -50,6 +52,9 @@ function App() {
                 </Route>
                 <Route path='/profile'>
                     <Profile />
+                </Route>
+                <Route path='/yourpicks'>
+                    <YourPicks />
                 </Route>
                 <Route path='/signup'>
                     <Signup />

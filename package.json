@@ -17,6 +17,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@sendgrid/mail": "^7.4.2",
+        "axios": "^0.21.1",
         "bcryptjs": "2.4.3",
         "bootstrap": "^4.5.3",
         "compression": "^1.7.4",
@@ -25,6 +27,7 @@
         "express": "^4.17.0",
         "express-jwt": "^6.0.0",
         "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.20",
         "morgan": "^1.10.0",
         "mysql2": "^2.2.5",
         "react-bootstrap": "^1.4.3",
