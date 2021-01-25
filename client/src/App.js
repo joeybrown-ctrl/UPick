@@ -6,10 +6,13 @@ import Begin from './components/Home/Home';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Notes from './pages/Notes';
+import Friend from './components/Friend/Friend';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
+import Event from './components/Event/Event';
 import YourPicks from './pages/YourPicks';
+
 
 
 function App() {
@@ -37,29 +40,33 @@ function App() {
     return (
         <Router>
             <MainNav />
-            <div className='gradient'>
-                <Switch>
-                    <Route exact path='/begin'>
-                        <Begin />
-                    </Route>
-                    <Route path='/profile'>
-                        <Profile />
-                    </Route>
-                    <Route path='/yourpicks'>
-                        <YourPicks />
-                    </Route>
-                    <Route path='/signup'>
-                        <Signup />
-                    </Route>
-                    <Route path='/login'>
-                        <Login />
-                    </Route>
-                    <PrivateRoute exact path='/notes'>
-                        <Notes />
-                    </PrivateRoute>
-
-                </Switch>
-            </div>
+            <Switch>
+                <Route exact path='/begin'>
+                    <Begin />
+                </Route>
+                <Route exact path='/friend'>
+                    <Friend />
+                </Route>
+                <Route exact path='/event'>
+                    <Event/>
+                </Route>
+                <Route path='/profile'>
+                    <Profile />
+                </Route>
+                <Route path='/yourpicks'>
+                    <YourPicks />
+                </Route>
+                <Route path='/signup'>
+                    <Signup />
+                </Route>
+                <Route path='/login'>
+                    <Login />
+                </Route>
+                <PrivateRoute exact path='/notes'>
+                    <Notes />
+                </PrivateRoute>
+                
+            </Switch>
         </Router>
     );
 }
