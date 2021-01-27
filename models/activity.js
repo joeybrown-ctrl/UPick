@@ -1,6 +1,6 @@
 // Activity tracks Up-Votes and Down-Votes (Owner and Invitee)
 
-const { stubTrue } = require("lodash");
+// const { stubTrue } = require('lodash');
 
 module.exports = function (sequelize, DataTypes) {
     const Activity = sequelize.define('Activity', {
