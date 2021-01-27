@@ -59,11 +59,6 @@ function Friend() {
                     <br/>
                     <div className="friend-list">
                         <FriendList/>
-                        <FriendList/>
-                        <FriendList/>
-                        <FriendList/>
-                        <FriendList/>
-                        <FriendList/>
                         <Button style={styles.pick} type='submit' block>Start Your Pick</Button>
                         <br/>
                         <p className='invite'>Invite A Friend</p>

@@ -3,7 +3,7 @@
     background-color: 'linear-gradient(to right, rgba(26,41,48,0), rgba(12,23,20,1))'
 }
 
-.gradient {  
+/* .gradient {  
     --color-1 : #1a2930; 
     --color-2: #0c1714;
     --color-1 : #1a2930;
@@ -11,10 +11,10 @@
         170deg, 
         var(--color-1), 
         var(--color-2) 80%);
-    /* min-height: 100vh;   */
+    min-height: 100vh;  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-}
+} */
 

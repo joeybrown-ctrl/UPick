@@ -42,9 +42,9 @@ function App() {
                 <Route exact path='/'>
                     <Begin />
                 </Route>
-                <Route exact path='/friend'>
+                <PrivateRoute exact path='/friend'>
                     <Friend />
-                </Route>
+                </PrivateRoute>
                 <Route exact path='/event'>
                     <Event/>
                 </Route>
