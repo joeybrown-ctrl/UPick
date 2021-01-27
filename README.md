@@ -44,8 +44,7 @@ yarn
 
 Next run the schema.sql as found within utils/schema.sql`. It should contain: 
 ```
-DROP DATABASE IF EXISTS project_3_local;
-CREATE DATABASE project_3_local;
+
 ```
 These names are of course up to you. If you are going to change the local database/test database, make sure to follow the Note in the next step. 
 
