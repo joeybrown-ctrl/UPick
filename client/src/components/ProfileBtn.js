@@ -4,11 +4,12 @@ const styles = {
     btn: {
         float: 'center',
         width: '50%',
-        height: '50px',
+        height: '30px',
         textAlign: 'center',
         backgroundColor: '#FFD217',
         border: '0',
-        color: '#1a2930'
+        color: '#1a2930',
+        fontSize: '11px'
     },
 };
 
