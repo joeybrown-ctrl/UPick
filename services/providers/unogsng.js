@@ -47,7 +47,15 @@ async function unogsng(event, activityNum) {
 
     const result = await Axios.request(netflixHeader);
     console.log(result.data);
-    return result;
+
+    return result.data.results.map(movie => {
+        return {
+            Name : movie.title,
+            URL: null,
+            Image: movie.img
+        };
+    });
+
 }
 
 module.exports = unogsng;
