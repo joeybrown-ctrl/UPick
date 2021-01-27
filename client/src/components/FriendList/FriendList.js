@@ -1,31 +1,31 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Row, Col, Button, Image } from 'react-bootstrap';
 
-class FriendList extends Component {
+function FriendList() {
 
-    state= {
-        user: []
-    };
+    const [friends, setFriends] = useState([]);
 
-    componentDidMount() {
+    useEffect(() => {
+
         axios
-        .get('/api/users/:id')
-        .then(response => {
-            this.show(response);
-        })
-        .catch(error => {
-            this.show(error);
-        });
+            .get('/api/users/')
+            .then(response => {
+                show(response);
+            })
+            .catch(error => {
+                show(error);
+            });
+
+    }, []);
+
+    function show(response) {
+        setFriends(
+            response.data
+        );
     }
 
-    show(response) {
-        this.setState({
-            User: response.data.email
-        })
-    }
-
-    styles = {
+    const styles = {
 
         icon: {
             width: '40px',
@@ -45,29 +45,25 @@ class FriendList extends Component {
 
     };
 
-    render(){
-
-        console.log(this.state.user[0]);
-
     return(
         <div>
             <Row>
+            {friends.map(({id, email}) => (
                 <Col xs={1} style={styles.iconCol}>
                     <Image style={styles.icon}src="./assets/friendicon.png" rounded />
                 </Col>
                 <br/>
                 <Col >
-                {this.state.user.map(({id, email}) => (
-                    <Button key={id} block style={styles.friendBtn}>{email}</Button>
-                ))
-                }   
+                        <Button key={id} block style={styles.friendBtn}>{email}</Button>    
                 </Col>
+                ))
+                    } 
             </Row>
             <br/>
-            </div>
+        </div>
 
     );
-}
+
 }
 
 export default FriendList;
