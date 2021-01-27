@@ -1,10 +1,12 @@
 // Activity tracks Up-Votes and Down-Votes (Owner and Invitee)
 
+const { stubTrue } = require("lodash");
+
 module.exports = function (sequelize, DataTypes) {
     const Activity = sequelize.define('Activity', {
         Image: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isUrl: true
             }
@@ -31,7 +33,9 @@ module.exports = function (sequelize, DataTypes) {
     // An Activity can't be created without an Event due to the foreign key constraint
         Activity.belongsTo(models.Event, {
             foreignKey: {
-                allowNull: false
+                allowNull: false,
+                name: 'EventId',
+                as: 'Event'
             }
         });
     };
