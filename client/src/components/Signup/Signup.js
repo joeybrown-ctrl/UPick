@@ -63,9 +63,9 @@ const Signup = () => {
         <div className='gradient'>
             <div className='card-div'>
                 <Card style={styles.card}>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <h2 className='title'>Signup</h2>
-                        <Form.Group controlId="formBasicEmail" onSubmit={handleSubmit}>
+                        <Form.Group>
                             <br/>
                             {/* <Form.Label style={styles.formText} htmlFor='email'>Email:</Form.Label> */}
                             <Form.Control

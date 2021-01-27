@@ -13,8 +13,6 @@ import Profile from './pages/Profile';
 import Event from './components/Event/Event';
 import YourPicks from './pages/YourPicks';
 
-
-
 function App() {
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
@@ -41,7 +39,7 @@ function App() {
         <Router>
             <MainNav />
             <Switch>
-                <Route exact path='/begin'>
+                <Route exact path='/'>
                     <Begin />
                 </Route>
                 <Route exact path='/friend'>
