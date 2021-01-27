@@ -1,6 +1,6 @@
 const db = require('../models');
 const router = require('express').Router();
-const activityGeneration = require('../services/activityGeneration')
+const activityGeneration = require('../services/activityGeneration');
 const isAuthenticated = require('../utils/middleware').isAuthenticated;
 
 
@@ -51,6 +51,14 @@ router.post('/', isAuthenticated, async function (req, res) {
             }
 
             const activities = await activityGeneration(event);
+            console.log(activities);
+
+            await Promise.all(activities.map((activity) => {
+                return db.Activity.create({
+                    ...activity,
+                    EventId: event.id,
+                }, { transaction: t });
+            }));
 
             return event;
 

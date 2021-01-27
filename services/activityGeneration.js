@@ -1,6 +1,6 @@
 //import registry and models
 const registry = require('./registry');
-const lodash = requrie('lodash');
+const lodash = require('lodash');
 
 //creating the algo to map through the providers:
 const activityNum = 10;
@@ -20,7 +20,7 @@ async function activityGeneration(event) {
 
     //map range to activityTypes
     const randomActivity = range.map(() => {
-        return activityTypes[lodash.random(activityTypes.length)];
+        return activityTypes[Math.floor(Math.random()* activityTypes.length)];
 
     });
 
@@ -41,7 +41,8 @@ async function activityGeneration(event) {
 
     const retrievedActivities = await Promise.all(Object.entries(activityCount).map(([ activityType, activityCount ]) => {
         const providers = registry[activityType];
-        const provider = providers[lodash.random(providers.length)];
+        const provider = providers[Math.floor(Math.random()* providers.length)];
+
 
         return provider(event, activityCount);
     }));
