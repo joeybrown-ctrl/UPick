@@ -8,23 +8,27 @@
         var(--color-2) 80%);
     min-height: 100vh;  
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center; 
+    padding-top: 50px
 }
 
 .card-div {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: flex-start
 }
 
-.btn-begin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 12px 16px 0 #ff4747, 0 17px 50px 0 #ff4747;
-    /* width: 300px */
+.title {
+    text-align: center;
+    padding-bottom: 10px
 }
 
+.search-link {
+    cursor: pointer;
+}
 
-
+.invite {
+    color: #f9f9f9c9;
+    text-align: center
+}

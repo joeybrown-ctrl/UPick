@@ -12,7 +12,9 @@ const MainNav = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav ">      
                     <Nav className="mr-auto">
-                        <Nav.Link href="/Begin">Begin</Nav.Link>
+                        <Nav.Link href="/begin">Begin</Nav.Link>
+                        <Nav.Link href="/friend">Friend</Nav.Link>
+                        <Nav.Link href="/event">Event</Nav.Link>
                         {isLoggedIn() ?
                             <>
                                 <li>Hello, {getProfile().email}</li>

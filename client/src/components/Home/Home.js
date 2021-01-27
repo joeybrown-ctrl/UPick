@@ -1,14 +1,35 @@
 import './style.css';
-import { Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 function Begin() {
 
+    const styles = {
+        card: {
+            width: '18rem',
+            padding: '20px',
+            backgroundColor: 'transparent',
+            border: '0',
+            justifyContent: 'center',
+        },
+
+        btn: {
+            backgroundColor: '#FFD217',
+            border: '0',
+            color: '#1a2930'
+        }
+    };
+
     return (
         <div className='gradient'>
-            <Button className='begin shadow p-3 mb-5' variant='warning' size='lg'>
-            Get Started
-            </Button>  
+            <div className='card-div'>
+                <Card style={styles.card}>
+                    <Button style={styles.btn} className='begin' block>
+                    Get Started
+                    </Button>
+                </Card>
+            </div> 
         </div>
+            
     );
 }
 
