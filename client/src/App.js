@@ -37,7 +37,7 @@ function App() {
         <Router>
             <MainNav />
             <Switch>
-                <Route exact path='/begin'>
+                <Route exact path='/'>
                     <Begin />
                 </Route>
                 <Route path='/profile'>

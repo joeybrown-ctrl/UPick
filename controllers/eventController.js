@@ -1,5 +1,6 @@
 const db = require('../models');
 const router = require('express').Router();
+const activityGeneration = require('../services/activityGeneration')
 const isAuthenticated = require('../utils/middleware').isAuthenticated;
 
 
@@ -48,6 +49,8 @@ router.post('/', isAuthenticated, async function (req, res) {
             } else {
                 throw new Error('Invite emails missing from request body');
             }
+
+            const activities = await activityGeneration(event);
 
             return event;
 

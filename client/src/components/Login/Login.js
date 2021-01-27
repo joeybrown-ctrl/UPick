@@ -62,9 +62,9 @@ const Login = () => {
         <div className='gradient'>
             <div className='card-div'>
                 <Card style={styles.card}>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <h2 className='title'>Login Page</h2>
-                        <Form.Group controlId='formBasicEmail' onSubmit={handleSubmit}>
+                        <Form.Group>
                             <br/>
                             <Form.Control
                                 style={styles.control}
