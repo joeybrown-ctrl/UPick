@@ -14,7 +14,6 @@ import Event from './components/Event/Event';
 import YourPicks from './pages/YourPicks';
 
 
-
 function App() {
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
