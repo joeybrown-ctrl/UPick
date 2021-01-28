@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Row, Col, Button, Image } from 'react-bootstrap';
+import Search from '../Search/Search';
 
 function FriendList() {
 
     const [friends, setFriends] = useState([]);
+    const [search, setSearch] = useState('');
 
     useEffect(() => {
 
@@ -25,7 +27,19 @@ function FriendList() {
         );
     }
 
+    const searchHandler = (value) => {
+        setSearch(value);
+    };
+
+    const updateFriends = friends.filter(friends => {
+        return friends.email.toLowerCase().includes(search);
+    }, []);
+
     const styles = {
+
+        friendDiv: {
+            margin: '20px'
+        },
 
         icon: {
             width: '40px',
@@ -47,18 +61,19 @@ function FriendList() {
 
     return(
         <div>
-            <Row>
-            {friends.map(({id, email}) => (
-                <Col xs={1} style={styles.iconCol}>
-                    <Image style={styles.icon}src="./assets/friendicon.png" rounded />
-                </Col>
-                <br/>
-                <Col >
-                        <Button key={id} block style={styles.friendBtn}>{email}</Button>    
-                </Col>
-                ))
-                    } 
-            </Row>
+            <Search searchHandler={searchHandler}/>
+            {(search === '' ? friends: updateFriends).map(({id, email}) => (
+                <Row style={styles.friendDiv}>
+                    <Col xs={1} style={styles.iconCol}>
+                        <Image style={styles.icon}src="./assets/friendicon.png" rounded />
+                    </Col>
+                    <br/>
+                    <Col>  
+                        <Button key={id} block style={styles.friendBtn}>{email}</Button>
+                    </Col>
+                </Row>
+            ))
+            } 
             <br/>
         </div>
 
