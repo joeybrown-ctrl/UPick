@@ -4,7 +4,7 @@ import './style.css';
 
 function CardImg() {
     return (
-        <Card.Img variant="top" src="https://placekitten.com/350/300" />
+        <Card.Img variant="top" src="../assets/default-user.jpg" />
     );
 }
 

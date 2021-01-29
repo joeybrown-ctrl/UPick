@@ -11,10 +11,11 @@ import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
 import Event from './components/Event/Event';
-import YourPicks from './pages/YourPicks';
+// import YourPicks from './pages/YourPicks';
 // import Activity from './components/Activity/Activity';
 import PickCard from './components/PickCard/PickCard';
 // import Header from './components/Header/Header';
+import YourPicks from './pages/PreviousPicks';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -43,27 +44,21 @@ function App() {
             <MainNav />
             {/* <Header/> */}
             <Switch>
-                <Route exact path='/'>
-                    <Begin />
-                </Route>
                 <PrivateRoute exact path='/friend'>
                     <Friend />
                 </PrivateRoute>
-                <Route exact path='/event'>
+                <PrivateRoute exact path='/event'>
                     <Event/>
-                </Route>
-                {/* <Route exact path='/activity'>
-                    <Activity/>
-                </Route> */}
-                <Route exact path='/pick'>
+                </PrivateRoute>
+                <PrivateRoute exact path='/pick'>
                     <PickCard/>
-                </Route>
-                <Route path='/profile'>
+                </PrivateRoute>
+                <PrivateRoute exact path='/profile'>
                     <Profile />
-                </Route>
-                <Route path='/yourpicks'>
+                </PrivateRoute>
+                <PrivateRoute exact path='/yourpicks'>
                     <YourPicks />
-                </Route>
+                </PrivateRoute>
                 <Route path='/signup'>
                     <Signup />
                 </Route>
@@ -73,7 +68,9 @@ function App() {
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
-                
+                <Route exact path='/'>
+                    <Begin />
+                </Route>  
             </Switch>
         </Router>
     );

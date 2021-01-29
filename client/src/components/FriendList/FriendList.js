@@ -70,7 +70,7 @@ function FriendList() {
 
     };
 
-    return(
+    return (
         <div>
             <div style={styles.search}>
                 <Search searchHandler={searchHandler}/>
@@ -78,7 +78,7 @@ function FriendList() {
             {(search === '' ? friends: updateFriends).map(({id, email}) => (
                 <Row style={styles.friendDiv}>
                     <Col xs={1} style={styles.iconCol}>
-                        <Image style={styles.icon}src="./assets/friendicon.png" rounded />
+                        <Image style={styles.icon} src="./assets/friendicon.png" rounded />
                     </Col>
                     <br/>
                     <Col>  
@@ -86,8 +86,8 @@ function FriendList() {
                     </Col>
                 </Row>
             ))
-            } 
-            <br/>
+            }
+            <br />
         </div>
 
     );
