@@ -2,6 +2,7 @@
 /* eslint-disable quotes */
 /* eslint-disable camelcase */
 const Axios = require("axios");
+require('dotenv').config();
 
 
 const genres = [
@@ -40,7 +41,7 @@ async function unogsng(event, activityNum) {
             end_year: "2020",
         },
         headers: {
-            "x-rapidapi-key": "eddac634f6msh1369aef8a00bc3fp156f8cjsn43d94794b678",
+            "x-rapidapi-key": process.env.UNOGSNG_APIKEY,
             "x-rapidapi-host": "unogsng.p.rapidapi.com",
         },
     };
@@ -51,7 +52,7 @@ async function unogsng(event, activityNum) {
     return result.data.results.map(movie => {
         return {
             Name : movie.title,
-            URL: null,
+            URL: movie.poster,
             Image: movie.img
         };
     });
