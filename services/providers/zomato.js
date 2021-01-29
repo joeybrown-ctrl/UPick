@@ -2,7 +2,7 @@ const Axios = require('axios');
 require('dotenv').config();
 
 //we need to hide the user key
-const zomatoHeaders = { 'user-key': process.env.APIKEY };
+const zomatoHeaders = { 'user-key': process.env.ZOMATO_APIKEY };
 
 async function zomato(event, activityNum) {
     const result = await Axios.get(
