@@ -26,6 +26,21 @@ module.exports = {
             }
             //make more tables (Events, Activities, etc -- always include createdAt and updatedAt)
             //not super helpful for creating users as this doesn't hash our passwords but useful for dummy events, etc
+        ],
+        //is this correctly laid out? What is the npx command to add this to the seeders?
+        'Events', [
+            {
+                name: 'MEOW',
+                latitude: '32.2226° N',
+                longitude: '110.9747° W',
+                activityType: 'restaurant',
+                entertainmentType: null,
+                movieGenre: null,
+                pricePoint: null,
+                cuisine: null,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            }
         ], {
             logging: console.log
         });
