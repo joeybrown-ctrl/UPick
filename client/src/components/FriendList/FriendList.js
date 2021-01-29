@@ -1,10 +1,12 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Row, Col, Button, Image } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Row, Col, Button, Image } from 'react-bootstrap';
+import Search from '../Search/Search';
 
 // function FriendList() {
 
-//     const [friends, setFriends] = useState([]);
+    const [friends, setFriends] = useState([]);
+    const [search, setSearch] = useState('');
 
 //     useEffect(() => {
 
@@ -25,12 +27,24 @@
 //         );
 //     }
 
-//     const styles = {
+    const searchHandler = (value) => {
+        setSearch(value);
+    };
 
-//         icon: {
-//             width: '40px',
-//             height: '40px'
-//         },
+    const updateFriends = friends.filter(friends => {
+        return friends.email.toLowerCase().includes(search);
+    }, []);
+
+    const styles = {
+
+        friendDiv: {
+            margin: '20px'
+        },
+
+        icon: {
+            width: '40px',
+            height: '40px'
+        },
 
 //         iconCol: {
 //             paddingRight: '40px'
@@ -45,22 +59,23 @@
 
 //     };
 
-//     return (
-//         <div>
-//             <Row>
-//                 {friends.map(({ id, email }) => (
-//                 <Col xs={1} style={styles.iconCol}>
-//                     <Image style={styles.icon}src="./assets/friendicon.png" rounded></Image>
-//                 </Col>
-//                 <br></br>
-//                 <Col >
-//                         <Button key={id} block style={styles.friendBtn}>{email}</Button>    
-//                 </Col>
-//                 ))
-//                 }
-//             </Row>
-//             <br></br>
-//         </div>
+    return(
+        <div>
+            <Search searchHandler={searchHandler}/>
+            {(search === '' ? friends: updateFriends).map(({id, email}) => (
+                <Row style={styles.friendDiv}>
+                    <Col xs={1} style={styles.iconCol}>
+                        <Image style={styles.icon}src="./assets/friendicon.png" rounded />
+                    </Col>
+                    <br/>
+                    <Col>  
+                        <Button key={id} block style={styles.friendBtn}>{email}</Button>
+                    </Col>
+                </Row>
+            ))
+            } 
+            <br/>
+        </div>
 
 //     );
 
