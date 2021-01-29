@@ -20,6 +20,20 @@ router.get('/:id', isAuthenticated, function(req, res) {
         .catch(err => res.status(422).json(err));
 });
 
+//GET route api/user/invites
+//will need to change this depending on the object that is returned
+router.get('/invites/:id', isAuthenticated, function(req, res) {
+    db.Invite.findByPk(req.params.id, {
+        include: db.Event
+    }).then(dbInvites => {
+        db.Event.findByPk(dbInvites.Event.id, {
+            include: db.User
+        }).then(dbModel => {
+            res.json(dbModel);
+        }).catch(err => res.status(422).json(err));
+    }).catch(err => res.status(422).json(err));
+});
+
 /**
  * User - Create
  * Notice how we are using the 'withPassword' scope.

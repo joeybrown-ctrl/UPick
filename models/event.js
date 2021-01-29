@@ -75,8 +75,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
 
-        // Event.hasMany(models.Activity, {
-        // });
+        Event.hasMany(models.Activity, {
+        });
     };
 
     return Event;
