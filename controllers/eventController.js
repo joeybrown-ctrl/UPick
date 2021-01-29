@@ -8,18 +8,51 @@ const isAuthenticated = require('../utils/middleware').isAuthenticated;
  * Event - Read All
  */
 
-router.get('/', isAuthenticated, function (req, res) {
+router.get('/', function (req, res) {
+
     // we can pass in things in the query of a REST call!
-    db.Event.findAll(req.query)
+    db.Event.findAll(req.query, {
+        include: db.Activity,
+    })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
 });
 
-/**
- * Event - Read One
- */
+
+// GET /api/events/:id
 router.get('/:id', isAuthenticated, function (req, res) {
     db.Event.findByPk(req.params.id)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+
+// GET /api/events/:id/activities
+router.get('/:id/activities', isAuthenticated, function(req, res) {
+    db.Event.findByPk(req.params.id, {
+        include: db.Activity
+    })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+
+//POST /api/events
+router.post('/', isAuthenticated, function(req, res) {
+    db.Event.create({
+        UserId: req.user.id,
+        ...req.body
+    })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
+
+//POST /api/events/vote
+router.post('/vote', isAuthenticated, function(req, res) {
+    db.Event.create({
+        UserId: req.user.id,
+        ...req.body
+    })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
 });
@@ -102,3 +135,6 @@ module.exports = router;
 //Then we'll need accepting or rejecting an invite.
 
 //extend validation on model later on each column, refining the validation. Post-MVP.
+
+//need routes for things like the activities, so that the FE can actually display those to the user,
+//collect votes and then POST those votes back to the server
