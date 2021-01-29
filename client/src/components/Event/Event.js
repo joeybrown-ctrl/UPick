@@ -1,21 +1,14 @@
 import { Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
 import './style.css';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 function Event() {
 
-    // const [checked, setChecked] = useState(false);
-    // const [radioValue, setRadioValue] =useState('1');
+    const [whatValue, setWhatValue] = useState([1,2]);
+    const [whereValue, setWhereValue] = useState([1,2]);
 
-    // const what = [
-    //     { name: 'Eat/Drink', value: '1' },
-    //     { name: 'Watch', value: '2' }
-    // ];
-
-    // const where = [
-    //     { name: 'Staying In', value: '1' },
-    //     { name: 'Going Out', value: '2' }
-    // ]
+    const handleWhatChange = (whatValue) => setWhatValue(whatValue); 
+    const handleWhereChange = (whereValue) => setWhereValue(whereValue);
 
     const styles = {
         card: {
@@ -43,7 +36,14 @@ function Event() {
 
         location: {
             margin: '5px',
-            backgroundColor: '#c5c1c0',
+            backgroundColor: '#FFD217',
+            color: '#1a2930',
+            border: '0'
+        },
+
+        pick: {
+            margin: '5px',
+            backgroundColor: '#FFFFFF',
             color: '#1a2930',
             border: '0'
         }
@@ -55,20 +55,23 @@ function Event() {
         <div className='gradient'>
             <div className='card-div'>
                 <Card style={styles.card}>
-                    <h5 className='title'>A Few Questions</h5>
-                    <ToggleButtonGroup style={styles.toggle} type="checkbox" defaultValue={[1]} className="mb-2">
-                        <ToggleButton style={styles.tBtn} value={1}>Going Out</ToggleButton>
-                        <ToggleButton style={styles.tBtn} value={2}>Staying In</ToggleButton>
+                    <br/>
+                    <h5 className='title'>Set Your Pick</h5>
+                    <br/>
+                    <ToggleButtonGroup style={styles.toggle} type="checkbox" value={whatValue} onChange={handleWhatChange} className="mb-2">
+                        <ToggleButton style={styles.tBtn} value={1}>Eat & Drink</ToggleButton>
+                        <ToggleButton style={styles.tBtn} value={2}>Watch Now</ToggleButton>
                     </ToggleButtonGroup>
-                    <ToggleButtonGroup style={styles.toggle} type="checkbox" defaultValue={[2]} className="mb-2">
+                    <ToggleButtonGroup style={styles.toggle} type="checkbox" value={whereValue} onChange={handleWhereChange} className="mb-2">
                         <ToggleButton style={styles.tBtn} value={1}>Going Out</ToggleButton>
                         <ToggleButton style={styles.tBtn} value={2}>Staying In</ToggleButton>
                     </ToggleButtonGroup>
                 
-                    <Button style={styles.location} block>Find My Location</Button>
-                    
-                    
+                    <Button style={styles.location}>Set My Location</Button>
                     <br/>
+                    <br/>
+                    <br/>
+                    <Button style={styles.pick}>Start My Pick</Button>
                     
                 </Card>
             </div>

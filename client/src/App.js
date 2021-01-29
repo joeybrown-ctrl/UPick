@@ -11,6 +11,10 @@ import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
 import Event from './components/Event/Event';
+// import YourPicks from './pages/YourPicks';
+// import Activity from './components/Activity/Activity';
+import PickCard from './components/PickCard/PickCard';
+// import Header from './components/Header/Header';
 import YourPicks from './pages/PreviousPicks';
 
 function App() {
@@ -38,15 +42,16 @@ function App() {
     return (
         <Router>
             <MainNav />
+            {/* <Header/> */}
             <Switch>
-                <Route exact path='/'>
-                    <Begin />
-                </Route>
                 <PrivateRoute exact path='/friend'>
                     <Friend />
                 </PrivateRoute>
                 <PrivateRoute exact path='/event'>
                     <Event/>
+                </PrivateRoute>
+                <PrivateRoute exact path='/pick'>
+                    <PickCard/>
                 </PrivateRoute>
                 <PrivateRoute exact path='/profile'>
                     <Profile />
@@ -63,7 +68,9 @@ function App() {
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
-                
+                <Route exact path='/'>
+                    <Begin />
+                </Route>  
             </Switch>
         </Router>
     );

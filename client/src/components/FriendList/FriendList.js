@@ -7,6 +7,7 @@ function FriendList() {
 
     const [friends, setFriends] = useState([]);
     const [search, setSearch] = useState('');
+    // const [friendChoice, setFriendChoice] = useState()
 
     useEffect(() => {
 
@@ -35,6 +36,10 @@ function FriendList() {
         return friends.email.toLowerCase().includes(search);
     }, []);
 
+    // const selectFriend = friendSelected => {
+    //     setFriends(friendSelected);
+    // };
+
     const styles = {
 
         friendDiv: {
@@ -57,19 +62,27 @@ function FriendList() {
             border: '0 solid #FFD217'
         },
 
+        search: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }
+
     };
 
     return (
         <div>
-            <Search searchHandler={searchHandler} />
-            {(search === '' ? friends : updateFriends).map(({ id, email }) => (
+            <div style={styles.search}>
+                <Search searchHandler={searchHandler}/>
+            </div>
+            {(search === '' ? friends: updateFriends).map(({id, email}) => (
                 <Row style={styles.friendDiv}>
                     <Col xs={1} style={styles.iconCol}>
                         <Image style={styles.icon} src="./assets/friendicon.png" rounded />
                     </Col>
-                    <br />
-                    <Col>
-                        <Button key={id} block style={styles.friendBtn}>{email}</Button>
+                    <br/>
+                    <Col>  
+                        <Button key={id} value={email} block style={styles.friendBtn}>{email}</Button>
                     </Col>
                 </Row>
             ))
