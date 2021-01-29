@@ -1,5 +1,11 @@
 import { Card, Button } from 'react-bootstrap';
 
+
+//this is to get a list of PAST events
+//call this right when the page loads into state
+//then filter through the array of events and return all events where the date is less than todays date
+//put that into state, and then render that to the page
+
 const styles = {
     btn: {
         float: 'center',
