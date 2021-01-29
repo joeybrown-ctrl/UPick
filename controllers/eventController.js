@@ -7,7 +7,9 @@ const isAuthenticated = require('../utils/middleware').isAuthenticated;
 /**
  * Event - Read All
  */
+
 router.get('/', function (req, res) {
+
     // we can pass in things in the query of a REST call!
     db.Event.findAll(req.query, {
         include: db.Activity,

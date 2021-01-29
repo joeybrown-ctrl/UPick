@@ -35,6 +35,20 @@ router.post('/', isAuthenticated, function (req, res) {
 
 //create vote (POST route)
 //add logic to determine whether or not event is completed (join votes to activities onto events)
+
 //create algo to find out which activity user picked
+
+
+router.post('/', isAuthenticated, function(req, res) {
+    //note to FE, make sure you are calling Status and ActivityID
+    // axios.post('/api/vote', {status: someStatus, ActivityID: someActivityID})
+
+    db.Vote.create({
+        UserId: req.user.id,
+        ...req.body
+    })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+});
 
 module.exports = router;
