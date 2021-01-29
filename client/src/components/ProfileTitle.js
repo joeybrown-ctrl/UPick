@@ -1,15 +1,20 @@
 import { Card } from 'react-bootstrap';
-
-const styles = {
-
-    text: {
-        color: '#c5c1c0'
-    }
-};
+import React from 'react';
+import useAuth from '../hooks/auth';
 
 const ProfileTitle = () => {
+    const { user } = useAuth();
+
+    const styles = {
+
+        text: {
+            color: '#c5c1c0'
+        }
+    };
+
+
     return (
-        <Card.Title style={styles.text}>Nova</Card.Title>
+        <Card.Title style={styles.text}>{user.email}</Card.Title>
     );
 };
 
