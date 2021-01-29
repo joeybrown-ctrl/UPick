@@ -19,7 +19,7 @@ const ProfileBtn = () => {
             <Button style={styles.btn} href='/yourpicks'>
                 <p><i className="fas fa-search"></i> Previous Picks</p>
             </Button>
-            <Button style={styles.btn}>
+            <Button style={styles.btn} href='/friend'>
                 <p><i className="fas fa-users"></i> Friends</p>
             </Button>
         </Row>

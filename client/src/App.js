@@ -11,7 +11,7 @@ import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
 import Event from './components/Event/Event';
-import YourPicks from './pages/YourPicks';
+import YourPicks from './pages/PreviousPicks';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -45,15 +45,15 @@ function App() {
                 <PrivateRoute exact path='/friend'>
                     <Friend />
                 </PrivateRoute>
-                <Route exact path='/event'>
+                <PrivateRoute exact path='/event'>
                     <Event/>
-                </Route>
-                <Route path='/profile'>
+                </PrivateRoute>
+                <PrivateRoute exact path='/profile'>
                     <Profile />
-                </Route>
-                <Route path='/yourpicks'>
+                </PrivateRoute>
+                <PrivateRoute exact path='/yourpicks'>
                     <YourPicks />
-                </Route>
+                </PrivateRoute>
                 <Route path='/signup'>
                     <Signup />
                 </Route>

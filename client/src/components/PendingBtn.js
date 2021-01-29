@@ -15,7 +15,10 @@ const styles = {
 const PendingBtn = () => {
     return (
         <Row>
-            <Button style={styles.btn} href='/yourpicks'>
+
+            {/* When a user clicks this button it takes them to a pending pick with another user */}
+
+            <Button style={styles.btn}>
                 <p><i className="fas fa-spinner"></i> Pending Picks</p>
             </Button>
         </Row>
