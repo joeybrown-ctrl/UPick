@@ -20,7 +20,7 @@ router.get('/:id', isAuthenticated, function(req, res) {
         .catch(err => res.status(422).json(err));
 });
 
-//GET route api/user/invites
+//GET route api/user/invites/:id
 //will need to change this depending on the object that is returned
 router.get('/invites/:id', isAuthenticated, function(req, res) {
     db.Invite.findByPk(req.params.id, {
