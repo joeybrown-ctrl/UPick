@@ -1,5 +1,6 @@
 import './style.css';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Begin() {
 
@@ -23,9 +24,11 @@ function Begin() {
         <div className='gradient'>
             <div className='card-div'>
                 <Card style={styles.card}>
-                    <Button style={styles.btn} className='begin' block>
+                    <Link to='/friend'>
+                        <Button style={styles.btn} className='begin' block>
                     Get Started
-                    </Button>
+                        </Button>
+                    </Link>
                 </Card>
             </div> 
         </div>

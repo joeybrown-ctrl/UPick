@@ -1,6 +1,7 @@
 import './style.css';
 import { Card, Button } from 'react-bootstrap';
 import FriendList from '../FriendList/FriendList';
+import { Link } from 'react-router-dom';
 
 function Friend() {
 
@@ -32,7 +33,9 @@ function Friend() {
                     <br/>
                     <div className="friend-list">
                         <FriendList/>
-                        <Button style={styles.pick} type='submit' block>Start Your Pick</Button>
+                        <Link to='/event'>
+                            <Button style={styles.pick} type='submit' block>Next</Button>
+                        </Link>
                         <br/>
                         <p className='invite'>Invite A Friend</p>
                     </div>

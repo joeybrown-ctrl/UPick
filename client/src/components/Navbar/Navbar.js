@@ -14,7 +14,8 @@ const MainNav = () => {
                     <Nav className="mr-auto">
                         <Nav.Link href="/begin">Begin</Nav.Link>
                         <Nav.Link href="/friend">Friend</Nav.Link>
-                        <Nav.Link href="/event">Event</Nav.Link>
+                        {/* <Nav.Link href="/event">Event</Nav.Link> */}
+                        <Nav.Link href="/activity">Activity</Nav.Link>
                         {isLoggedIn() ?
                             <>
                                 <li>Hello, {getProfile().email}</li>

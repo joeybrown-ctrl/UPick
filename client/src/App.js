@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
 import Event from './components/Event/Event';
 import YourPicks from './pages/YourPicks';
+// import Activity from './components/Activity/Activity';
+import PickCard from './components/PickCard/PickCard';
+// import Header from './components/Header/Header';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -38,6 +41,7 @@ function App() {
     return (
         <Router>
             <MainNav />
+            {/* <Header/> */}
             <Switch>
                 <Route exact path='/'>
                     <Begin />
@@ -47,6 +51,12 @@ function App() {
                 </PrivateRoute>
                 <Route exact path='/event'>
                     <Event/>
+                </Route>
+                {/* <Route exact path='/activity'>
+                    <Activity/>
+                </Route> */}
+                <Route exact path='/pick'>
+                    <PickCard/>
                 </Route>
                 <Route path='/profile'>
                     <Profile />

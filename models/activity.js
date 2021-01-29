@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         URL: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 isUrl: true
             }
