@@ -3,29 +3,29 @@ import axios from 'axios';
 import { Row, Col, Button, Image } from 'react-bootstrap';
 import Search from '../Search/Search';
 
-function FriendList() {
+// function FriendList() {
 
     const [friends, setFriends] = useState([]);
     const [search, setSearch] = useState('');
 
-    useEffect(() => {
+//     useEffect(() => {
 
-        axios
-            .get('/api/users/')
-            .then(response => {
-                show(response);
-            })
-            .catch(error => {
-                show(error);
-            });
+//         axios
+//             .get('/api/users/')
+//             .then(response => {
+//                 show(response);
+//             })
+//             .catch(error => {
+//                 show(error);
+//             });
 
-    }, []);
+//     }, []);
 
-    function show(response) {
-        setFriends(
-            response.data
-        );
-    }
+//     function show(response) {
+//         setFriends(
+//             response.data
+//         );
+//     }
 
     const searchHandler = (value) => {
         setSearch(value);
@@ -46,18 +46,18 @@ function FriendList() {
             height: '40px'
         },
 
-        iconCol: {
-            paddingRight: '40px'
-        },
+//         iconCol: {
+//             paddingRight: '40px'
+//         },
 
-        friendBtn: {
-            textAlign: 'left',
-            backgroundColor: '#212f35',
-            color: '#f9f9f9c9',
-            border: '0 solid #FFD217'
-        },
+//         friendBtn: {
+//             textAlign: 'left',
+//             backgroundColor: '#212f35',
+//             color: '#f9f9f9c9',
+//             border: '0 solid #FFD217'
+//         },
 
-    };
+//     };
 
     return(
         <div>
@@ -77,8 +77,8 @@ function FriendList() {
             <br/>
         </div>
 
-    );
+//     );
 
-}
+// }
 
-export default FriendList;
+// export default FriendList;
