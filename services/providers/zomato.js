@@ -1,6 +1,21 @@
+/* eslint-disable no-unused-vars */
 const Axios = require('axios');
 require('dotenv').config();
 
+
+const cuisine = [
+    {id: '1', name: 'American'},
+    {id: '3', name: 'Asian'},
+    {id: '193', name: 'BBQ'},
+    {id: '30', name: 'Cafe'},
+    {id: '40', name: 'Fast Food'},
+    {id: '156', name: 'Greek'},
+    {id: '55', name: 'Italian'},
+    {id: '82', name: 'Pizza'},
+    {id: '997', name:'Taco'},
+    {id: '308', name: 'Vegetarian'},
+
+];
 //we need to hide the user key
 const zomatoHeaders = { 'user-key': process.env.ZOMATO_APIKEY };
 
