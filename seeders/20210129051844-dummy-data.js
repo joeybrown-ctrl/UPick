@@ -79,7 +79,21 @@ module.exports = {
                 Name: 'InuYasha: The Movie 3: Swords of an Honorable Ruler'
             },
         ],
-        {
+        //is this correctly laid out? What is the npx command to add this to the seeders?
+        'Events', [
+            {
+                name: 'MEOW',
+                latitude: '32.2226° N',
+                longitude: '110.9747° W',
+                activityType: 'restaurant',
+                entertainmentType: null,
+                movieGenre: null,
+                pricePoint: null,
+                cuisine: null,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            }
+        ], {
 
             logging: console.log
 
