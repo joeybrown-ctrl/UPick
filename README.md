@@ -26,7 +26,13 @@
 
   ## Description 
 
+U-Pick is an app designed to help indecisive users choose entertainment and dining options based on the location of the user. The user may also invite their partner and/or friends. Once the user is signed in, they are sent a verification email, a profile is created and the user can create a 'pick' by inviting friends and choosing entertainment and/or dining. 
 
+Utilizing two different API calls run through an algorithm, U-pick shows the user and whomever they have invited a series of entertainment/dining options, allowing both the user and the invitee to swipe right or left (yes and no respectively), showing the matching 'picks' to each person. If no matches occur, then after ten tries, U-Pick reveals a 'pick' of its own to help the user and invitee decide on the course of their evening.
+
+U-Pick is built using React, React-Bootstrap, and React Router on the Front End. The Back End is built with Node.js, Express routes, and Sequelize for databasing. The Zomato API and Rapid API (Unogsng) are used to retrieve restaurant and entertainment data. U-pick was tested with Insomnia, linted using ES Lint, built on Visual Studio Code, and deployed to Heroku. 
+
+U-Pick 
 
   <hr>
 
@@ -37,36 +43,59 @@
   ### User Story 
 
   ```
-  
+  AS an indecisive person,
+  WHEN I enter my location, a friend's email and choose entertainment and/or dining options,
+  THEN my friend and I are presented 'picks' that we can swipe right (yes) or swipe left (no) with the matching picks presented to each of us on our own devices.
+  WHEN, in the case of there being no agreement between my friend and I, U-Pick chooses the 'pick' for us.
   ```
 
   ### Acceptance Criteria
 
   ```
-  
+  AS a person who struggles with choosing entertainment and dining options,
+  GIVEN an app that helps with this process,
+  WHEN I sign up, I am sent a verification email,
+  THEN I am able to create a profile.
+  WHEN I start a 'pick', I can invite my partner, friend or group of friends,
+  THEN I can set my location and choose whether I want the app to help 'pick' entertainment or dining options.
+  THEN, swiping right or swiping left, I am able to vote on the 'picks' from the app,
+  and the invited person can do the same from their device.
+  WHEN the invited person and I swipe right on the same entertainment or dining option, we are each shown the match.
+  WHEN neither of us matches on any of the options, the app 'picks' the options for us.
+  THEN, the 'picks' are displayed, and I can relax, knowing that the evening's entertainment and/or dining options are already decided.
+
   ```
 
   ### Installation
 
-  ```
+  Git clone to local repository and run 'npm install' within terminal to install dependencies.
   
-  ```
 
   <br>
 
   ## Built With
 
+* [React](https://reactjs.org/)
+* [React Router](https://reactrouter.com/web/guides/quick-start)
+* [React Bootstrap](https://react-bootstrap.github.io/)
 * [SendGrid](https://sendgrid.com)
 * [Sequelize](https://sequelize.org/master/index.html)
-* [ES Lint](https://eslint.org/)
 * [Node.js](https://nodejs.org/en/about/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Bootstrap](https://getbootstrap.com/)
+* [Express](https://expressjs.com/)
+* [React Tinder Card](https://www.npmjs.com/package/react-tinder-card)
+* [Zomato API](https://developers.zomato.com/api)
+* [Rapid API](https://rapidapi.com/marketplace)
+* [Axios](https://www.npmjs.com/package/axios)
+* [Insomnia](https://insomnia.rest/)
+* [MySQL Workbench](https://www.mysql.com/)
+* [Heroku](https://heroku.com/)
 * [jQuery](https://jquery.com/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [HTML 5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
 * [Markdown](https://guides.github.com/features/mastering-markdown/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [ES Lint](https://eslint.org/)
 
 <br>
 

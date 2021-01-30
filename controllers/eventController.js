@@ -63,7 +63,8 @@ router.post('/vote', isAuthenticated, function(req, res) {
  * We need the isAuthenticated middleware in the route to have a user in the request
  */
 
-router.post('/', isAuthenticated, async function (req, res) {
+//changing the route name to '/withacitivity' as we already have '/' route which will fire first, overriding the route below.
+router.post('/withactivity', isAuthenticated, async function (req, res) {
 
     try {
 
