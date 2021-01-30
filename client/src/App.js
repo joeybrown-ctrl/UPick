@@ -16,6 +16,7 @@ import Event from './components/Event/Event';
 import PickCard from './components/PickCard/PickCard';
 // import Header from './components/Header/Header';
 import YourPicks from './pages/PreviousPicks';
+import FinalPickCard from './components/FinalPickCard/FinalPickCard';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -58,6 +59,9 @@ function App() {
                 </PrivateRoute>
                 <PrivateRoute exact path='/yourpicks'>
                     <YourPicks />
+                </PrivateRoute>
+                <PrivateRoute exact path='/finalpick'>
+                    <FinalPickCard />
                 </PrivateRoute>
                 <Route path='/signup'>
                     <Signup />
