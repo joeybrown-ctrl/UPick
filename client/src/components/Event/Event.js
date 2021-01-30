@@ -2,11 +2,13 @@ import { Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
 import './style.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useGeoLocation from '../../hooks/useGeoLocation';
 
 function Event() {
 
     const [whatValue, setWhatValue] = useState([1,2]);
     const [whereValue, setWhereValue] = useState([1,2]);
+    const location = useGeoLocation();
 
     const handleWhatChange = (whatValue) => setWhatValue(whatValue); 
     const handleWhereChange = (whereValue) => setWhereValue(whereValue);
@@ -74,6 +76,11 @@ function Event() {
                     <Link to="/pick">
                         <Button style={styles.pick} block>Start My Pick</Button>
                     </Link>
+                    <div>
+                        {
+                            location.loaded ? JSON.stringify(location): 'Location access denied.'
+                        }
+                    </div>
                 </Card>
             </div>
         </div>
