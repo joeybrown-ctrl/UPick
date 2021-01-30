@@ -43,7 +43,7 @@ function FriendList() {
     const styles = {
 
         friendDiv: {
-            margin: '20px'
+            margin: '10px'
         },
 
         icon: {
@@ -52,16 +52,18 @@ function FriendList() {
         },
 
         iconCol: {
-            // paddingRight: '40px',
-            // margin: 'auto',
-            // width: '20%',
+            paddingLeft: '5px',
+            paddingRight: '20px',
+            margin: 'auto',
+            width: 'auto',
         },
 
         friendBtn: {
             textAlign: 'left',
             backgroundColor: '#212f35',
             color: '#f9f9f9c9',
-            border: '0 solid #FFD217'
+            border: '0 solid #FFD217',
+            fontSize: '10.8pt'
         }
 
     };
@@ -76,7 +78,7 @@ function FriendList() {
                     </Col>
                     <br/>
                     <Col>  
-                        <Button key={id} value={email} style={styles.friendBtn} block >{email}</Button>
+                        <Button key={id} value={email} style={styles.friendBtn} block>{email}</Button>
                     </Col>
                 </Row>
             ))

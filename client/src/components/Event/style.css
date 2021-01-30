@@ -4,7 +4,8 @@
 }
 
 .card-div {
-    display: flex;
+    margin-top: 10vh;
+    /* display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center */
 }

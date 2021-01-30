@@ -14,7 +14,8 @@ function Event() {
     const styles = {
 
         card: {
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            height: '66vh',
         },
 
         toggle: {
@@ -41,6 +42,10 @@ function Event() {
             backgroundColor: '#FFFFFF',
             color: '#1a2930',
             border: '0'
+        },
+
+        cardDiv: {
+            marginTop: '10vh',
         }
 
 
@@ -48,7 +53,7 @@ function Event() {
 
     return (
         <div className='gradient'>
-            <div className='card-div'>
+            <div style={styles.cardDiv}>
                 <Card style={styles.card}>
                     <br/>
                     <h5 className='title'>Set Your Pick</h5>

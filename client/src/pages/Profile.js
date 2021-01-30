@@ -5,18 +5,29 @@ import ProfileBtn from '../components/ProfileBtn';
 // import ProfileBio from '../components/ProfileBio';
 import ProfileTitle from '../components/ProfileTitle';
 import PendingBtn from '../components/PendingBtn';
-// import './style.css';
 
 
 function Profile() {
 
     const styles = {
         card: {
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            position: 'relative',
+            width: '400px',
+            padding: '35px',
+            maxWidth: '85vw',
+            height: '66vh',
+            // borderRadius: '20px',
+            // backgroundSize: 'cover',
+            // backgroundPosition: 'center',
+            boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
         },
 
         cardDiv: {
-            marginTop: '15vh'
+            marginTop: '7vh',
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'flex-start'
         }
     };
 
@@ -24,16 +35,13 @@ function Profile() {
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
-                    <CardImg></CardImg>
-                    <Card.Body>
-                        <ProfileTitle></ProfileTitle>
-                        {/* <ProfileBio></ProfileBio> */}
-                        <PendingBtn></PendingBtn>
-                        <hr></hr>
-                        <ProfileBtn></ProfileBtn>
-                        <br></br>
-                        <ActivityBtn></ActivityBtn>
-                    </Card.Body>
+                    <CardImg/>
+                    <ProfileTitle/>
+                    <PendingBtn/>
+                    <br/>
+                    <ProfileBtn/>
+                    <br/>
+                    <ActivityBtn/>
                 </Card>
             </div>
         </div>

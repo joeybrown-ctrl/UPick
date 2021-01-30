@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
-import Begin from './components/Begin/Begin';
+// import Begin from './components/Begin/Begin';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Notes from './pages/Notes';
@@ -44,9 +44,6 @@ function App() {
             <MainNav />
             {/* <Header/> */}
             <Switch>
-                <Route exact path='/begin'>
-                    <Begin />
-                </Route>
                 <PrivateRoute exact path='/friend'>
                     <Friend />
                 </PrivateRoute>
@@ -72,7 +69,7 @@ function App() {
                     <Notes />
                 </PrivateRoute>
                 <Route exact path='/'>
-                    <Begin />
+                    <Profile />
                 </Route>  
             </Switch>
         </Router>

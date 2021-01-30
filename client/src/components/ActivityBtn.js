@@ -1,4 +1,4 @@
-import { Row, Button, Container } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 
 const styles = {
     btn: {
@@ -7,7 +7,8 @@ const styles = {
         textAlign: 'center',
         backgroundColor: '#FFD217',
         border: '0',
-        color: '#1a2930'
+        color: '#1a2930',
+        padding: '10px 5px 10px 5px',
     },
     txt: {
         color: '#c5c1c0',
@@ -15,9 +16,9 @@ const styles = {
     }
 };
 
-const ActivityBtn = () => {
+function ActivityBtn() {
     return (
-        <Container>
+        <>
             <Row>
                 <p style={styles.txt}>Can't decide what to do?</p>
             </Row>
@@ -27,9 +28,9 @@ const ActivityBtn = () => {
                     Start a Pick
                 </Button>
             </Row>
-        </Container>
+        </>
     );
-};
+}
 
 export default ActivityBtn;
 
