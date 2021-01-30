@@ -1,4 +1,4 @@
-.gradient {  
+/* .gradient {  
     --color-1 : #1a2930; 
     --color-2: #0c1714;
     --color-1 : #1a2930;
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center; 
-}
+} */
 
 .card-div {
     display: flex;

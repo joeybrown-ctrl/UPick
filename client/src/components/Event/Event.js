@@ -1,25 +1,63 @@
-import { Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import './style.css';
 import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import useGeoLocation from '../../hooks/useGeoLocation';
+import axios from 'axios';
+import useFriends from '../../hooks/useFriends';
 
 function Event() {
 
-    const [whatValue, setWhatValue] = useState([1,2]);
-    const [whereValue, setWhereValue] = useState([1,2]);
+    const [restaurant, setRestaurant] = useState(true);
+    const [movie, setMovie] = useState(true);
+    const location = useGeoLocation();
+    const [friendChoices] = useFriends();
+    const [pick, toggleRedirect] = useState(0);
+    // const [location, setLocation] = useState({
+    //     lat: '',
+    //     long: ''
+    // });
+    
+    // function useGeoLocation() {
+    //     setLocation({
+    //         lat: '',
+    //         long: ''
+    //     });
+    // };
 
-    const handleWhatChange = (whatValue) => setWhatValue(whatValue); 
-    const handleWhereChange = (whereValue) => setWhereValue(whereValue);
+    function handleRestaurantChange() {
+        setRestaurant(!restaurant);
+    }
+
+    function handleMovieChange() {
+        setMovie(!movie);
+    }
+
+    function handleSubmit() {
+        const data = {
+            longitude: location.coordinates.longitude,
+            latitude: location.coordinates.latitude,
+            name: Date.now(),
+            activityType: [],
+            inviteEmails: friendChoices
+        };
+
+        if (movie) {
+            data.activityType.push('movies');
+        } 
+
+        if (restaurant) {
+            data.activityType.push('restaurants');
+        } 
+        data.activityType=data.activityType.join(',');
+        axios.post('/api/event/withactivity', data).then(({data}) => toggleRedirect(data.id));
+    }
 
     const styles = {
+
         card: {
-            // width: '22rem',
-            width: '100%',
-            height: 'auto',
-            padding: '20px',
             backgroundColor: 'transparent',
-            // border: '0',
-            justifyContent: 'center',
-            overflowY: 'scroll'
+            height: '66vh',
         },
 
         toggle: {
@@ -46,33 +84,44 @@ function Event() {
             backgroundColor: '#FFFFFF',
             color: '#1a2930',
             border: '0'
+        },
+
+        cardDiv: {
+            marginTop: '10vh',
         }
 
 
     };
 
+    if (pick) {
+        return <Redirect to={{
+            // If someone goes to signup, this transfers the redirect
+            pathname: '/pick/' + pick,
+        }}
+        />;
+    }
+
     return (
         <div className='gradient'>
-            <div className='card-div'>
+            <div style={styles.cardDiv}>
                 <Card style={styles.card}>
                     <br/>
                     <h5 className='title'>Set Your Pick</h5>
                     <br/>
-                    <ToggleButtonGroup style={styles.toggle} type="checkbox" value={whatValue} onChange={handleWhatChange} className="mb-2">
-                        <ToggleButton style={styles.tBtn} value={1}>Eat & Drink</ToggleButton>
-                        <ToggleButton style={styles.tBtn} value={2}>Watch Now</ToggleButton>
-                    </ToggleButtonGroup>
-                    <ToggleButtonGroup style={styles.toggle} type="checkbox" value={whereValue} onChange={handleWhereChange} className="mb-2">
-                        <ToggleButton style={styles.tBtn} value={1}>Going Out</ToggleButton>
-                        <ToggleButton style={styles.tBtn} value={2}>Staying In</ToggleButton>
-                    </ToggleButtonGroup>
-                
+                    <Button style={styles.tBtn} value={restaurant} onClick={handleRestaurantChange}>Eat & Drink</Button>
+                    <Button style={styles.tBtn} value={movie} onClick={handleMovieChange}>Watch Now</Button>               
                     <Button style={styles.location}>Set My Location</Button>
                     <br/>
                     <br/>
                     <br/>
-                    <Button style={styles.pick}>Start My Pick</Button>
                     
+                    <Button style={styles.pick} onClick={handleSubmit} block>Start My Pick</Button>
+                    
+                    <div>
+                        {
+                            location.loaded ? JSON.stringify(location): 'Location access denied.'
+                        }
+                    </div>
                 </Card>
             </div>
         </div>

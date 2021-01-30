@@ -21,7 +21,9 @@ router.get('/', function (req, res) {
 
 // GET /api/events/:id
 router.get('/:id', isAuthenticated, function (req, res) {
-    db.Event.findByPk(req.params.id)
+    db.Event.findByPk(req.params.id, {
+        include: db.Activity,
+    })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
 });
@@ -63,7 +65,7 @@ router.post('/vote', isAuthenticated, function(req, res) {
  * We need the isAuthenticated middleware in the route to have a user in the request
  */
 
-router.post('/', isAuthenticated, async function (req, res) {
+router.post('/withactivity', isAuthenticated, async function (req, res) {
 
     try {
 

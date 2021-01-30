@@ -1,4 +1,4 @@
-import { Container, Col, Row, Card } from 'react-bootstrap';
+import { Row, Card } from 'react-bootstrap';
 import PreviousPickCard from '../components/PreviousPickCard/PreviousPickCard';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -12,6 +12,24 @@ const styles = {
     text: {
         color: '#c5c1c0',
         textAlign: 'center'
+    },
+
+    card: {
+        backgroundColor: 'transparent',
+        position: 'relative',
+        width: '400px',
+        padding: '35px',
+        maxWidth: '85vw',
+        height: '66vh',
+        borderRadius: '20px',
+        boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
+    },
+
+    cardDiv: {
+        marginTop: '7vh',
+        // display: 'flex',
+        // justifyContent: 'center',
+        // alignItems: 'flex-start'
     }
 };
 
@@ -33,38 +51,28 @@ function PreviousPicks() {
 
 
     return (
-        <Container>
-            <Card style={{ width: '18rem' }}>
-                <Row className="justify-content-md-center">
-                    <h1 style={styles.text}>Your Previous Picks</h1>
-                </Row>
-                <br></br>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">
+        <div className='gradient'>
+            <div style={styles.cardDiv}>
+                <Card style={styles.card}>
+                    <h5 style={styles.text}>Your Previous Picks</h5>
+                    <br/>
+                    {/* Shosh, you will want to map through the previous card picks here. 
+                    I know this is just a display for now :) I am just making
+                    notes for my own memory */}
+                    <Row className="justify-content-md-center">
+                        {/* <Col md="auto"> */}
                         <PreviousPickCard picksData={events}>  </PreviousPickCard>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">
+                        {/* </Col> */}
+                    </Row>
+                    <br></br>
+                    <Row className="justify-content-md-center">
+                        {/* <Col md="auto"> */}
                         <PreviousPickCard picksData={events}>  </PreviousPickCard>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">
-                        <PreviousPickCard picksData={events}>  </PreviousPickCard>
-                    </Col>
-                </Row>
-                <br></br>
-                <Row className="justify-content-md-center">
-                    <Col md="auto">
-                        <PreviousPickCard picksData={events}>  </PreviousPickCard>
-                    </Col>
-                </Row>
-                <br></br>
-            </Card>
-        </Container>
+                        {/* </Col> */}
+                    </Row>
+                </Card>
+            </div>
+        </div>
     );
 }
 

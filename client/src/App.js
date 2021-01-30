@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
-import Begin from './components/Home/Home';
+// import Begin from './components/Begin/Begin';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Notes from './pages/Notes';
@@ -51,9 +51,9 @@ function App() {
                 <PrivateRoute exact path='/event'>
                     <Event/>
                 </PrivateRoute>
-                <PrivateRoute exact path='/pick'>
+                <Route exact path='/pick/:id'>
                     <PickCard/>
-                </PrivateRoute>
+                </Route>
                 <PrivateRoute exact path='/profile'>
                     <Profile />
                 </PrivateRoute>
@@ -73,7 +73,7 @@ function App() {
                     <Notes />
                 </PrivateRoute>
                 <Route exact path='/'>
-                    <Begin />
+                    <Profile />
                 </Route>  
             </Switch>
         </Router>
