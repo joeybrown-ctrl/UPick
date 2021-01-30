@@ -5,11 +5,14 @@ import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
 
+const alreadyRemoved = [];
 
 function PickCard() {
     const {id} = useParams();
     console.log(id);
-    const [pick, setPick] = useState([]); 
+    const [picks, setPicks] = useState([]); 
+    const [childRefs, setChildRefs] = useState([]); 
+    // let childRefs = [];
 
     useEffect(() => {
         fetchEvent();
@@ -23,8 +26,27 @@ function PickCard() {
     function fetchEvent() {
         axios.get(`/api/event/${id}`).then(({data}) => {
             console.log(data);
-            setPick(data.Activities);
+            setPicks(data.Activities);
+            setChildRefs([...data.Activities].fill(0).map(i => React.createRef()));
+            console.log(childRefs);
+
         });
+    }
+
+    function voteNo(id) {
+        const data = {
+            ActivityId:id,
+            status: false
+        };
+        axios.post('/api/vote', data);
+    }
+
+    function voteYes(id) {
+        const data = {
+            ActivityId:id,
+            status: true
+        };
+        axios.post('/api/vote', data);
     }
 
     const styles = {
@@ -44,33 +66,67 @@ function PickCard() {
             borderRadius: '50%',
         }
     };
+
+    const swiped = (_direction, id) => {
+        console.log('removing: ' + id);
+        alreadyRemoved.push(id);
+        if(_direction === 'left') {
+            voteNo(id);
+        }
+        else if(_direction === 'right') {
+            voteYes(id);
+        }
+    };
+
+    const onSwipe = (direction, id) => {
+        const cardsLeft = picks.filter(pick => !alreadyRemoved.includes(pick.id));
+        if (cardsLeft.length) {
+            const toBeRemoved = cardsLeft[cardsLeft.length - 1].id; // Find the card object to be removed
+            const index = picks.map(pick => pick.id).indexOf(toBeRemoved); // Find the index of which to make the reference to
+            alreadyRemoved.push(toBeRemoved); // Make sure the next card gets removed next time if this card do not have time to exit the screen
+            console.log(index, alreadyRemoved, id, childRefs);
+            childRefs[index].current.swipe(direction); // Swipe the card!
+        }
+        // if(direction === 'left') {
+        //     voteNo(id);
+        // }
+        // else if(direction === 'right') {
+        //     voteYes(id);
+        // }
+        console.log('You swiped: ' + direction + id);
+    };
     
     return (
         <div className='gradient'>
             <div className="tinderCards__cardContainer">
 
-                {pick.map(pick => (
-                    <TinderCard
-                        className='swipe'
-                        key={pick.name}
-                        preventSwipe={['up', 'down']}
-                    >
-                        <div 
-                            style={{backgroundImage: `url(${pick.Image ? pick.Image:''})` }}
-                            className='card'>
-                            <h4>{pick.Name}</h4>
+                {picks.map((pick, index) => (
+                    <>
+                        <TinderCard
+                            ref={childRefs[index]}
+                            onSwipe={(dir) => swiped(dir,pick.id)}
+                            className='swipe'
+                            key={pick.id}
+                            preventSwipe={['up', 'down']}
+                        >
+                            <div 
+                                style={{backgroundImage: `url(${pick.Image ? pick.Image:'../assets/fooddefault.png'})` }}
+                                className='card'>
+                                <h4>{pick.Name}</h4>
 
+                            </div>
+                        </TinderCard>
+                        <div className='swipe-button'>
+                            <Button className='swipe-button__left' onClick={() => onSwipe('left', pick.id)} style={styles.Xbtn}>
+                                <i className="fas fa-times fa-2x"></i>
+                            </Button>
+                            <Button className='swipe-button__right' onClick={() => onSwipe('right', pick.id)} style={styles.btn}>
+                                <i className="fas fa-heart fa-2x"></i>
+                            </Button>
                         </div>
-                    </TinderCard>
+                    </>
                 ))}
-                <div className='swipe-button'>
-                    <Button className='swipe-button__left' style={styles.Xbtn}>
-                        <i className="fas fa-times fa-2x"></i>
-                    </Button>
-                    <Button className='swipe-button__right' style={styles.btn}>
-                        <i className="fas fa-heart fa-2x"></i>
-                    </Button>
-                </div>
+                
             </div>
         </div>
     );
