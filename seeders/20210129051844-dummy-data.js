@@ -26,6 +26,7 @@ module.exports = {
             }
             //make more tables (Events, Activities, etc -- always include createdAt and updatedAt)
             //not super helpful for creating users as this doesn't hash our passwords but useful for dummy events, etc
+            //npx sequelize-cli db:seed:all (command to run in terminal)
         ], 'Activity', [
             {
                 Image: 'https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRUab8e9aGUukN2TTgiEKL5CyOC9gmK5ZrS8qDKi7fTJbsqvgMrICj8BalIBY5_gdDYLPgeNwvxLbsIt3Xc_vQRjrA.jpg?r=873',
