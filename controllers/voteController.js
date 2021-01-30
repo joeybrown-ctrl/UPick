@@ -4,7 +4,7 @@ const isAuthenticated = require('../utils/middleware').isAuthenticated;
 /**
  * Vote - Read All
  */
-router.get('/', isAuthenticated, function (req, res) {
+router.get('/', function (req, res) {
     // we can pass in things in the query of a REST call!
     db.Vote.findAll(req.query)
         .then(dbModel => res.json(dbModel))
