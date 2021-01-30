@@ -1,5 +1,5 @@
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/auth';
 // import './style.css';
 
@@ -28,7 +28,7 @@ const MainNav = () => {
                 <Navbar.Brand href="/profile" style={{color: '#FFFFFF'}}>UPick</Navbar.Brand>
                 {isLoggedIn() ?
                     <>
-                        <Link onClick={() => logout()} to='/'><i className="fas fa-sign-out-alt" style={{color: '#FFFFFF'}}></i></Link>
+                        <Nav.Link onClick={() => logout()} to='/'><i className="fas fa-sign-out-alt" style={{color: '#FFFFFF'}}></i></Nav.Link>
                     </>
                     :
                     <>

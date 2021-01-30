@@ -17,7 +17,7 @@ function Profile() {
             padding: '35px',
             maxWidth: '85vw',
             height: '66vh',
-            // borderRadius: '20px',
+            borderRadius: '20px',
             // backgroundSize: 'cover',
             // backgroundPosition: 'center',
             boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
