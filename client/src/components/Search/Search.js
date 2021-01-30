@@ -25,7 +25,7 @@ const Search = ({ searchHandler }) => {
 
     return(
 
-        <Form inline>                
+        <Form>                
             <InputGroup>
                 <FormControl
                     style={styles.bar}

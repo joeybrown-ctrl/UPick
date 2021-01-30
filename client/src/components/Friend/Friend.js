@@ -7,14 +7,7 @@ function Friend() {
 
     const styles = {
         card: {
-            // width: '22rem',
-            width: '100%',
-            height: 'auto',
-            padding: '20px',
-            backgroundColor: 'transparent',
-            // border: '0',
-            justifyContent: 'center',
-            overflowY: 'scroll'
+            backgroundColor: 'transparent'
         },
 
         pick: {
@@ -29,6 +22,7 @@ function Friend() {
         <div className='gradient'>
             <div className='card-div'>
                 <Card style={styles.card}>
+                    <br/>
                     <h5 className='title'>Choose A Friend</h5>
                     <br/>
                     <div className="friend-list">

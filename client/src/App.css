@@ -1,6 +1,6 @@
-*  {
+/* *  {
     margin: 0;
-}
+} */
 
 .loading {
     min-height: '100vh';
@@ -15,12 +15,9 @@
         170deg, 
         var(--color-1), 
         var(--color-2) 80%);
-    min-height: 100vh;  
-    /* display: flex;
-  flex-grow: 1;
-  justify-content: space-around; */
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center; 
+    min-height: 100vh;
+    display: flex;
+    /* align-items:center; */
+    justify-content: center
 }
 

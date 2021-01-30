@@ -52,7 +52,9 @@ function FriendList() {
         },
 
         iconCol: {
-            paddingRight: '40px'
+            // paddingRight: '40px',
+            // margin: 'auto',
+            // width: '20%',
         },
 
         friendBtn: {
@@ -60,29 +62,21 @@ function FriendList() {
             backgroundColor: '#212f35',
             color: '#f9f9f9c9',
             border: '0 solid #FFD217'
-        },
-
-        search: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
         }
 
     };
 
     return (
         <div>
-            <div style={styles.search}>
-                <Search searchHandler={searchHandler}/>
-            </div>
+            <Search searchHandler={searchHandler}/>
             {(search === '' ? friends: updateFriends).map(({id, email}) => (
                 <Row style={styles.friendDiv}>
-                    <Col xs={1} style={styles.iconCol}>
+                    <Col xs={2} style={styles.iconCol}>
                         <Image style={styles.icon} src="./assets/friendicon.png" rounded />
                     </Col>
                     <br/>
                     <Col>  
-                        <Button key={id} value={email} block style={styles.friendBtn}>{email}</Button>
+                        <Button key={id} value={email} style={styles.friendBtn} block >{email}</Button>
                     </Col>
                 </Row>
             ))

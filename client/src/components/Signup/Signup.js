@@ -39,7 +39,7 @@ const Signup = () => {
 
     const styles = {
         card: {
-            width: '18rem',
+            // width: '18rem',
             padding: '20px',
             backgroundColor: 'transparent',
             border: '0',

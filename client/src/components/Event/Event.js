@@ -1,6 +1,7 @@
 import { Button, ToggleButtonGroup, ToggleButton, Card } from 'react-bootstrap';
 import './style.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Event() {
 
@@ -11,15 +12,9 @@ function Event() {
     const handleWhereChange = (whereValue) => setWhereValue(whereValue);
 
     const styles = {
+
         card: {
-            // width: '22rem',
-            width: '100%',
-            height: 'auto',
-            padding: '20px',
-            backgroundColor: 'transparent',
-            // border: '0',
-            justifyContent: 'center',
-            overflowY: 'scroll'
+            backgroundColor: 'transparent'
         },
 
         toggle: {
@@ -71,8 +66,9 @@ function Event() {
                     <br/>
                     <br/>
                     <br/>
-                    <Button style={styles.pick}>Start My Pick</Button>
-                    
+                    <Link to="/pick">
+                        <Button style={styles.pick} block>Start My Pick</Button>
+                    </Link>
                 </Card>
             </div>
         </div>
