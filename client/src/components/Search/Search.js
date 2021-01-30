@@ -12,20 +12,22 @@ const Search = ({ searchHandler }) => {
             backgroundColor: '#FFD217',
             border: '0',
             color: '#1a2930',
-            borderRadius: '0px 5px 5px 0px'
+            borderRadius: '0px 5px 5px 0px',
+            marginBottom: '20px'
         },
 
         bar: {
             backgroundColor: '#212f35',
             color: '#f9f9f9c9',
-            border: '0'
+            border: '0',
+            marginBottom: '20px'
         }
     };
 
 
     return(
 
-        <Form inline>                
+        <Form>                
             <InputGroup>
                 <FormControl
                     style={styles.bar}

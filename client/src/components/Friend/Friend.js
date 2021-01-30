@@ -7,28 +7,30 @@ function Friend() {
 
     const styles = {
         card: {
-            // width: '22rem',
-            width: '100%',
-            height: 'auto',
-            padding: '20px',
             backgroundColor: 'transparent',
-            // border: '0',
-            justifyContent: 'center',
-            overflowY: 'scroll'
+            height: '66vh'
         },
 
         pick: {
             backgroundColor: '#FFD217',
             border: '0',
             color: '#1a2930'
+        },
+
+        cardDiv: {
+            marginTop: '10vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start'
         }
     };
 
 
     return(
         <div className='gradient'>
-            <div className='card-div'>
+            <div style={styles.cardDiv}>
                 <Card style={styles.card}>
+                    <br/>
                     <h5 className='title'>Choose A Friend</h5>
                     <br/>
                     <div className="friend-list">

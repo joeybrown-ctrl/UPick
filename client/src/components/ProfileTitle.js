@@ -8,7 +8,10 @@ const ProfileTitle = () => {
     const styles = {
 
         text: {
-            color: '#c5c1c0'
+            color: '#c5c1c0',
+            textAlign: 'center',
+            paddingTop: '20px',
+            paddingBottom: '20px'
         }
     };
 

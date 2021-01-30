@@ -6,11 +6,7 @@ function Begin() {
 
     const styles = {
         card: {
-            width: '18rem',
-            padding: '20px',
-            backgroundColor: 'transparent',
-            border: '0',
-            justifyContent: 'center',
+            backgroundColor: 'transparent'
         },
 
         btn: {

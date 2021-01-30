@@ -2,25 +2,35 @@ import { Button, Row } from 'react-bootstrap';
 
 const styles = {
     btn: {
-        float: 'center',
-        width: '50%',
-        height: '30px',
+        // float: 'center',
+        width: '44%',
+        // height: '35px',
+        padding: '10px 5px 10px 5px',
+        // margin: '3px 1px 3px 1x',
         textAlign: 'center',
         backgroundColor: '#FFD217',
         border: '0',
         color: '#1a2930',
-        fontSize: '11px'
+        // fontSize: '11px',
     },
+
+    row: {
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+
+    }
+
 };
 
 const ProfileBtn = () => {
     return (
-        <Row>
+        <Row style={styles.row}>
             <Button style={styles.btn} href='/yourpicks'>
-                <p><i className="fas fa-search"></i> Previous Picks</p>
+                <i className="fas fa-search"></i> Your Picks
             </Button>
             <Button style={styles.btn} href='/friend'>
-                <p><i className="fas fa-users"></i> Friends</p>
+                <i className="fas fa-users"></i> Friends
             </Button>
         </Row>
     );

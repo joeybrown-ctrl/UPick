@@ -21,7 +21,9 @@ router.get('/', function (req, res) {
 
 // GET /api/events/:id
 router.get('/:id', isAuthenticated, function (req, res) {
-    db.Event.findByPk(req.params.id)
+    db.Event.findByPk(req.params.id, {
+        include: db.Activity,
+    })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
 });

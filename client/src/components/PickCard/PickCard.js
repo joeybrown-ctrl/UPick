@@ -1,44 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import { Button } from 'react-bootstrap';
+import axios from 'axios';
 import './style.css';
+import { useParams } from 'react-router-dom';
 
 
 function PickCard() {
-
-    const [pick, setPick] = useState([
-        {
-            Image: 'https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRUab8e9aGUukN2TTgiEKL5CyOC9gmK5ZrS8qDKi7fTJbsqvgMrICj8BalIBY5_gdDYLPgeNwvxLbsIt3Xc_vQRjrA.jpg?r=873',
-            // URL: '',
-            Name: 'A Clockwork Orange'
-        },
-
-        {
-            Image: 'https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRUab8e9aGUukN2TTgiEKL5CyOC9gmK5ZrS8qDKi7fTJbsqvgMrICj8BalIBY5_gdDYLPgeNwvxLbsIt3Xc_vQRjrA.jpg?r=873',
-            // URL: '',
-            Name: 'A Clockwork Orange'
-        }
-    ]); 
+    const {id} = useParams();
+    console.log(id);
+    const [pick, setPick] = useState([]); 
 
     useEffect(() => {
-        setPick(
-            [{
-                Image: 'https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRUab8e9aGUukN2TTgiEKL5CyOC9gmK5ZrS8qDKi7fTJbsqvgMrICj8BalIBY5_gdDYLPgeNwvxLbsIt3Xc_vQRjrA.jpg?r=873',
-                // URL: '',
-                Name: 'A Clockwork Orange'
-            },
-    
-            {
-                Image: 'https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry0BZlEFb5-QjKc/AAAABRUab8e9aGUukN2TTgiEKL5CyOC9gmK5ZrS8qDKi7fTJbsqvgMrICj8BalIBY5_gdDYLPgeNwvxLbsIt3Xc_vQRjrA.jpg?r=873',
-                // URL: '',
-                Name: 'A Clockwork Orange'
-            }]
-        );
+        fetchEvent();
+        
         // database.collection('pick').onSnapshot(snapshot => (
         //     setPick(snapshot.docs.map(doc => doc.map))
         // ));
 
     }, []);
+
+    function fetchEvent() {
+        axios.get(`/api/event/${id}`).then(({data}) => {
+            console.log(data);
+            setPick(data.Activities);
+        });
+    }
 
     const styles = {
         btn: {
@@ -69,7 +56,7 @@ function PickCard() {
                         preventSwipe={['up', 'down']}
                     >
                         <div 
-                            style={{backgroundImage: `url(${pick.Image})` }}
+                            style={{backgroundImage: `url(${pick.Image ? pick.Image:''})` }}
                             className='card'>
                             <h4>{pick.Name}</h4>
 
