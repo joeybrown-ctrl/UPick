@@ -50,7 +50,7 @@ function App() {
                 <PrivateRoute exact path='/event'>
                     <Event/>
                 </PrivateRoute>
-                <Route exact path='/pick'>
+                <Route exact path='/pick/:id'>
                     <PickCard/>
                 </Route>
                 <PrivateRoute exact path='/profile'>

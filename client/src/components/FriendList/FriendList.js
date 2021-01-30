@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Row, Col, Button, Image } from 'react-bootstrap';
 import Search from '../Search/Search';
+import useFriends from '../../hooks/useFriends';
 
 function FriendList() {
 
     const [friends, setFriends] = useState([]);
     const [search, setSearch] = useState('');
-    // const [friendChoice, setFriendChoice] = useState()
+
+    
+    const [friendChoice, setFriendChoice] = useFriends();
 
     useEffect(() => {
 
@@ -36,9 +39,9 @@ function FriendList() {
         return friends.email.toLowerCase().includes(search);
     }, []);
 
-    // const selectFriend = friendSelected => {
-    //     setFriends(friendSelected);
-    // };
+    const handleFriendChange = email => {
+        setFriendChoice([...new Set([...friendChoice, email])]);
+    };
 
     const styles = {
 
@@ -78,7 +81,7 @@ function FriendList() {
                     </Col>
                     <br/>
                     <Col>  
-                        <Button key={id} value={email} style={styles.friendBtn} block>{email}</Button>
+                        <Button key={id} value={email} style={styles.friendBtn} onClick={ () => handleFriendChange(email)} block>{email}</Button>
                     </Col>
                 </Row>
             ))

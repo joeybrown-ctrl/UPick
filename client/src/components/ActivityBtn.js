@@ -24,7 +24,7 @@ function ActivityBtn() {
             </Row>
             <Row>
                 {/* When this button is clicked it takes the user to the inital start a pick page */}
-                <Button style={styles.btn} href='/event'>
+                <Button style={styles.btn} href='/friend'>
                     Start a Pick
                 </Button>
             </Row>
