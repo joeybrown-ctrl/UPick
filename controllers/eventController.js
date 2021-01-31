@@ -66,7 +66,7 @@ router.post('/vote', isAuthenticated, function(req, res) {
  */
 
 //changing the route name to '/withacitivity' as we already have '/' route which will fire first, overriding the route below.
-router.post('/withactivity', isAuthenticated, async function (req, res) {
+router.post('/withactivity', async function (req, res) {
 
     try {
 

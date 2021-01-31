@@ -1,5 +1,8 @@
 import { Card, Button } from 'react-bootstrap';
 import './style.css';
+import axios from 'axios';
+// import React, { useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
 const styles = {
     btn: {
@@ -14,7 +17,7 @@ const styles = {
     title: {
         color: '#c5c1c0',
         textAlign: 'center',
-        fontWeight:'bold',
+        fontWeight: 'bold',
         fontSize: '40px'
     },
     body: {
@@ -26,6 +29,42 @@ const styles = {
 function FinalPickCard() {
 
     // The code to pull the pick goes here
+    // const {id} = useParams();
+    // console.log(id);
+    // const [picks, setPicks] = useState([]); 
+
+    // function fetchVote() {
+    //     axios.get('/api/vote').then(({ data }) => {
+    //         console.log(data);
+
+    //     });
+    // }
+
+    // if (data.status === true){
+    //     console.log(data.status);
+    // }
+
+    // grab the 10 most recent votes
+
+    // function fetchEvent() {
+    //     axios.get(`/api/event/${id}`).then(({data}) => {
+    //         console.log(data);
+    //         // setPicks(data.Activities);
+
+    //     });
+    // }
+
+    // fetchVote();
+    // fetchEvent();
+
+    // fetch the votes, get all votes that are true, randomly select one of the true events, then go to the event use the ActivityId to get the url, photo, and name of the selection.
+
+
+    axios.get('/api/vote')
+        .then((data) => {
+            console.log(data);
+        });
+
 
     return (
         <Card style={{ width: '18rem' }}>

@@ -8,8 +8,8 @@ import useFriends from '../../hooks/useFriends';
 
 function Event() {
 
-    const [restaurant, setRestaurant] = useState(true);
-    const [movie, setMovie] = useState(true);
+    const [restaurant, setRestaurant] = useState(false);
+    const [movie, setMovie] = useState(false);
     const location = useGeoLocation();
     const [friendChoices] = useFriends();
     const [pick, toggleRedirect] = useState(0);
@@ -116,12 +116,6 @@ function Event() {
                     <br/>
                     
                     <Button style={styles.pick} onClick={handleSubmit} block>Start My Pick</Button>
-                    
-                    <div>
-                        {
-                            location.loaded ? JSON.stringify(location): 'Location access denied.'
-                        }
-                    </div>
                 </Card>
             </div>
         </div>
