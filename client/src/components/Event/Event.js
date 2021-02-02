@@ -13,24 +13,36 @@ function Event() {
     const location = useGeoLocation();
     const [friendChoices] = useFriends();
     const [pick, toggleRedirect] = useState(0);
-    // const [location, setLocation] = useState({
-    //     lat: '',
-    //     long: ''
-    // });
-    
-    // function useGeoLocation() {
-    //     setLocation({
-    //         lat: '',
-    //         long: ''
-    //     });
-    // };
+    const [button1, setButton1] = useState('#FFD217');
+    const [button2, setButton2] = useState('#FFD217');
+    // const [button3, setButton3] = useState('#FFD217');
+
+    function handleButtonColor1() {
+        if (restaurant === true) {
+            setButton1('#FBE18B');
+        }
+        else {
+            setButton1('#FFD217');
+        }
+    }
+
+    function handleButtonColor2() {
+        if (movie === true) {
+            setButton2('#FBE18B');
+        }
+        else {
+            setButton2('#FFD217');
+        }
+    }
 
     function handleRestaurantChange() {
         setRestaurant(!restaurant);
+        handleButtonColor1();
     }
 
     function handleMovieChange() {
         setMovie(!movie);
+        handleButtonColor2();
     }
 
     function handleSubmit() {
@@ -64,21 +76,6 @@ function Event() {
             alignItems: 'center'
         },
 
-        tBtn: {
-            margin: '5px',
-            borderRadius: '5px 5px 5px 5px',
-            backgroundColor: '#FFD217',
-            color: '#1a2930',
-            border: '0'
-        },
-
-        location: {
-            margin: '5px',
-            backgroundColor: '#FFD217',
-            color: '#1a2930',
-            border: '0'
-        },
-
         pick: {
             margin: '5px',
             backgroundColor: '#FFFFFF',
@@ -108,20 +105,45 @@ function Event() {
                     <br/>
                     <h5 className='title'>Set Your Pick</h5>
                     <br/>
-                    <Button style={styles.tBtn} value={restaurant} onClick={handleRestaurantChange}>Eat & Drink</Button>
-                    <Button style={styles.tBtn} value={movie} onClick={handleMovieChange}>Watch Now</Button>               
-                    <Button style={styles.location}>Set My Location</Button>
+                    <Button 
+                        style={
+                            {backgroundColor: button1, 
+                                margin: '5px',
+                                borderRadius: '5px 5px 5px 5px',
+                                color: '#1a2930',
+                                border: '0',
+                                outline: 'none'
+                            }} 
+                        value={restaurant} 
+                        onClick={handleRestaurantChange}>Eat & Drink
+                    </Button>
+                    <Button 
+                        style={
+                            {
+                                backgroundColor: button2, 
+                                margin: '5px',
+                                borderRadius: '5px 5px 5px 5px',
+                                color: '#1a2930',
+                                border: '0',
+                            }}
+                        value={movie} onClick={handleMovieChange}>Watch Now</Button>               
+                    <Button 
+                        style={
+                            {
+                                margin: '5px',
+                                backgroundColor: '#FBE18B',
+                                color: '#1a2930',
+                                border: '0'
+                            }
+                        }>
+                        Set My Location
+                    </Button>
                     <br/>
                     <br/>
                     <br/>
                     
                     <Button style={styles.pick} onClick={handleSubmit} block>Start My Pick</Button>
                     
-                    <div>
-                        {
-                            location.loaded ? JSON.stringify(location): 'Location access denied.'
-                        }
-                    </div>
                 </Card>
             </div>
         </div>

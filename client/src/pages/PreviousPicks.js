@@ -64,12 +64,12 @@ function PreviousPicks() {
                         <PreviousPickCard picksData={events}>  </PreviousPickCard>
                         {/* </Col> */}
                     </Row>
-                    <br></br>
+                    {/* <br></br>
                     <Row className="justify-content-md-center">
-                        {/* <Col md="auto"> */}
+                        <Col md="auto">
                         <PreviousPickCard picksData={events}>  </PreviousPickCard>
-                        {/* </Col> */}
-                    </Row>
+                        </Col>
+                    </Row> */}
                 </Card>
             </div>
         </div>

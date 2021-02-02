@@ -10,7 +10,19 @@
     box-shadow: 0px 18px 53px 0px rgba(0,0,0,0.3);
 }
 
-.card > h4 {
+.cardImg {
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    max-width: 85vw;
+    height: 50vh;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 8px 23px 0px rgba(0,0,0,0.3);
+}
+
+.cardImg > h4 {
     position: absolute;
     bottom: 10px;
     color: white;
@@ -42,6 +54,7 @@ width: 70px !important;
 height: 70px !important;       
 padding: 10px 16px !important;     
 color: #0c1714 !important;
+box-shadow: none !important;
 }
 
 .swipe-button__left {
@@ -49,6 +62,7 @@ width: 70px !important;
 height: 70px !important;       
 padding: 10px 16px !important;    
 color: #0c1714 !important;
+box-shadow: none !important;
 }
 
 .card-div {

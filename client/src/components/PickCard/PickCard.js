@@ -16,10 +16,6 @@ function PickCard() {
 
     useEffect(() => {
         fetchEvent();
-        
-        // database.collection('pick').onSnapshot(snapshot => (
-        //     setPick(snapshot.docs.map(doc => doc.map))
-        // ));
 
     }, []);
 
@@ -111,7 +107,7 @@ function PickCard() {
                         >
                             <div 
                                 style={{backgroundImage: `url(${pick.Image ? pick.Image:'../assets/fooddefault.png'})` }}
-                                className='card'>
+                                className='cardImg'>
                                 <h4>{pick.Name}</h4>
 
                             </div>
