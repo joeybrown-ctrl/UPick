@@ -13,36 +13,18 @@ function Event() {
     const location = useGeoLocation();
     const [friendChoices] = useFriends();
     const [pick, toggleRedirect] = useState(0);
-    const [button1, setButton1] = useState('#FFD217');
-    const [button2, setButton2] = useState('#FFD217');
-    // const [button3, setButton3] = useState('#FFD217');
 
-    function handleButtonColor1() {
-        if (restaurant === true) {
-            setButton1('#FBE18B');
-        }
-        else {
-            setButton1('#FFD217');
-        }
-    }
 
-    function handleButtonColor2() {
-        if (movie === true) {
-            setButton2('#FBE18B');
-        }
-        else {
-            setButton2('#FFD217');
-        }
-    }
+    const ENABLED_COLOR = '#FBE18B';
+    const DISABLED_COLOR = '#FFD217';
+
 
     function handleRestaurantChange() {
         setRestaurant(!restaurant);
-        handleButtonColor1();
     }
 
     function handleMovieChange() {
         setMovie(!movie);
-        handleButtonColor2();
     }
 
     function handleSubmit() {
@@ -107,7 +89,7 @@ function Event() {
                     <br/>
                     <Button 
                         style={
-                            {backgroundColor: button1, 
+                            {backgroundColor: restaurant ? ENABLED_COLOR : DISABLED_COLOR, 
                                 margin: '5px',
                                 borderRadius: '5px 5px 5px 5px',
                                 color: '#1a2930',
@@ -120,7 +102,7 @@ function Event() {
                     <Button 
                         style={
                             {
-                                backgroundColor: button2, 
+                                backgroundColor: movie ? ENABLED_COLOR : DISABLED_COLOR, 
                                 margin: '5px',
                                 borderRadius: '5px 5px 5px 5px',
                                 color: '#1a2930',
