@@ -8,7 +8,7 @@ const isAuthenticated = require('../utils/middleware').isAuthenticated;
  * Event - Read All
  */
 
-router.get('/', function (req, res) {
+router.get('/', isAuthenticated, function (req, res) {
 
     // we can pass in things in the query of a REST call!
     db.Event.findAll(req.query, {
@@ -30,7 +30,7 @@ router.get('/:id', isAuthenticated, function (req, res) {
 
 
 // GET /api/events/:id/activities
-router.get('/:id/activities', isAuthenticated, function(req, res) {
+router.get('/:id/activities', isAuthenticated, function (req, res) {
     db.Event.findByPk(req.params.id, {
         include: db.Activity
     })
@@ -40,7 +40,7 @@ router.get('/:id/activities', isAuthenticated, function(req, res) {
 
 
 //POST /api/events
-router.post('/', isAuthenticated, function(req, res) {
+router.post('/', isAuthenticated, function (req, res) {
     db.Event.create({
         UserId: req.user.id,
         ...req.body
@@ -50,7 +50,7 @@ router.post('/', isAuthenticated, function(req, res) {
 });
 
 //POST /api/events/vote
-router.post('/vote', isAuthenticated, function(req, res) {
+router.post('/vote', isAuthenticated, function (req, res) {
     db.Event.create({
         UserId: req.user.id,
         ...req.body
@@ -76,7 +76,7 @@ router.post('/withactivity', async function (req, res) {
                 OwnerId: req.user.id,
                 ...req.body
             }, { transaction: t });
-            if(req.body.inviteEmails){
+            if (req.body.inviteEmails) {
                 await Promise.all(req.body.inviteEmails.map((inviteeEmail) => {
                     return db.Invite.create({
                         EventId: event.id,
