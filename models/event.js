@@ -15,14 +15,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
-                len: [1]
+                isDecimal: true
             }
         },
         longitude: {
             type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
-                len: [1]
+                isDecimal: true
             }
         },
         //this is a comma-separated list (movie, restaurant -- these are the two main data providers)
