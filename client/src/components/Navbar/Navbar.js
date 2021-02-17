@@ -1,7 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/auth';
-// import './style.css';
 
 const MainNav = () => {
     const { isLoggedIn, logout} = useAuth();

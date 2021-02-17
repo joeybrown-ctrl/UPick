@@ -1,4 +1,3 @@
-import './style.css';
 import { Card, Button } from 'react-bootstrap';
 import FriendList from '../FriendList/FriendList';
 import { Link } from 'react-router-dom';
@@ -22,6 +21,16 @@ function Friend() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start'
+        },
+
+        title: {
+            textAlign: 'center',
+            paddingBottom: '10px'
+        },      
+
+        invite: {
+            color: '#f9f9f9c9',
+            textAlign: 'center'
         }
     };
 
@@ -31,7 +40,7 @@ function Friend() {
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
                     <br/>
-                    <h5 className='title'>Choose A Friend</h5>
+                    <h5 style={styles.title}>Choose A Friend</h5>
                     <br/>
                     <div className="friend-list">
                         <FriendList/>
@@ -39,7 +48,7 @@ function Friend() {
                             <Button style={styles.pick} type='submit' block>Next</Button>
                         </Link>
                         <br/>
-                        <p className='invite'>Invite A Friend</p>
+                        <p style={styles.invite}>Invite A Friend</p>
                     </div>
                 </Card>
             </div>

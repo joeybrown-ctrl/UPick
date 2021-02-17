@@ -1,5 +1,4 @@
 import { Button, Card } from 'react-bootstrap';
-import './style.css';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import useGeoLocation from '../../hooks/useGeoLocation';
