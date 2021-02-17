@@ -1,5 +1,4 @@
 import { Card, Button } from 'react-bootstrap';
-import './style.css';
 import axios from 'axios';
 // import React, { useState } from 'react';
 // import { useParams } from 'react-router-dom';

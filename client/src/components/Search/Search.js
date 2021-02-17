@@ -1,5 +1,4 @@
 import { Form, FormControl, InputGroup } from 'react-bootstrap';
-import './style.css';
 
 const Search = ({ searchHandler }) => {
     const handleSearchInputChange = e => {
@@ -21,6 +20,10 @@ const Search = ({ searchHandler }) => {
             color: '#f9f9f9c9',
             border: '0',
             marginBottom: '20px'
+        },
+
+        searchLink: {
+            cursor: 'pointer'
         }
     };
 

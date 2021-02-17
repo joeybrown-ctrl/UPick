@@ -8,10 +8,10 @@ import { useParams } from 'react-router-dom';
 const alreadyRemoved = [];
 
 function PickCard() {
-    const {id} = useParams();
+    const { id } = useParams();
     console.log(id);
-    const [picks, setPicks] = useState([]); 
-    const [childRefs, setChildRefs] = useState([]); 
+    const [picks, setPicks] = useState([]);
+    const [childRefs, setChildRefs] = useState([]);
     // let childRefs = [];
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function PickCard() {
     }, []);
 
     function fetchEvent() {
-        axios.get(`/api/event/${id}`).then(({data}) => {
+        axios.get(`/api/event/${id}`).then(({ data }) => {
             console.log(data);
             setPicks(data.Activities);
             setChildRefs([...data.Activities].fill(0).map(i => React.createRef()));
@@ -31,7 +31,7 @@ function PickCard() {
 
     function voteNo(id) {
         const data = {
-            ActivityId:id,
+            ActivityId: id,
             status: false
         };
         axios.post('/api/vote', data);
@@ -39,7 +39,7 @@ function PickCard() {
 
     function voteYes(id) {
         const data = {
-            ActivityId:id,
+            ActivityId: id,
             status: true
         };
         axios.post('/api/vote', data);
@@ -66,10 +66,10 @@ function PickCard() {
     const swiped = (_direction, id) => {
         console.log('removing: ' + id);
         alreadyRemoved.push(id);
-        if(_direction === 'left') {
+        if (_direction === 'left') {
             voteNo(id);
         }
-        else if(_direction === 'right') {
+        else if (_direction === 'right') {
             voteYes(id);
         }
     };
@@ -91,7 +91,7 @@ function PickCard() {
         // }
         console.log('You swiped: ' + direction + id);
     };
-    
+
     return (
         <div className='gradient'>
             <div className="tinderCards__cardContainer">
@@ -100,13 +100,13 @@ function PickCard() {
                     <>
                         <TinderCard
                             ref={childRefs[index]}
-                            onSwipe={(dir) => swiped(dir,pick.id)}
+                            onSwipe={(dir) => swiped(dir, pick.id)}
                             className='swipe'
                             key={pick.id}
                             preventSwipe={['up', 'down']}
                         >
-                            <div 
-                                style={{backgroundImage: `url(${pick.Image ? pick.Image:'../assets/fooddefault.png'})` }}
+                            <div
+                                style={{ backgroundImage: `url(${pick.Image ? pick.Image : '../assets/fooddefault.png'})` }}
                                 className='cardImg'>
                                 <h4>{pick.Name}</h4>
 
@@ -122,7 +122,7 @@ function PickCard() {
                         </div>
                     </>
                 ))}
-                
+
             </div>
         </div>
     );

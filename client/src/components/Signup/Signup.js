@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/auth';
 import { Card, Form, Button } from 'react-bootstrap';
-import './style.css';
 
 const Signup = () => {
     const { signup, isLoggedIn } = useAuth();
@@ -64,6 +63,22 @@ const Signup = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start'
+            // align-items: center
+        },
+
+        title: {
+            color: '#f9f9f9c9'
+        },
+
+        redirect: {
+            color: '#f9f9f9c9'
+            /* color: #2d2d2dbb */
+        },
+
+        link: {
+            color: '#f9f9f9c9',
+            cursor: 'pointer'
+
         }
     };
 
@@ -72,7 +87,7 @@ const Signup = () => {
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
                     <Form onSubmit={handleSubmit}>
-                        <h2 className='title'>Signup</h2>
+                        <h2 style={styles.title}>Signup</h2>
                         <Form.Group>
                             <br/>
                             {/* <Form.Label style={styles.formText} htmlFor='email'>Email:</Form.Label> */}
@@ -98,10 +113,10 @@ const Signup = () => {
                             <br />
                             <Button style={styles.btn} type='submit' block>Signup</Button>
                         </Form.Group>
-                        <p className='redirect'>
+                        <p style={styles.redirect}>
                         Already have an account? 
                         </p>
-                        <p className='link' onClick={() => toggleRedirect(true)}>Login Here</p>
+                        <p style={styles.link} onClick={() => toggleRedirect(true)}>Login Here</p>
                     </Form>
                 </Card>
             </div>
