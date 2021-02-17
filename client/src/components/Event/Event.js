@@ -67,10 +67,17 @@ function Event() {
 
         cardDiv: {
             marginTop: '10vh',
+            /* display: flex;
+            justify-content: center;
+            align-items: center */
+        },
+
+        
+        title: {
+            color: '#f9f9f9c9',
         }
-
-
     };
+
 
     if (pick) {
         return <Redirect to={{
@@ -85,7 +92,7 @@ function Event() {
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
                     <br/>
-                    <h5 className='title'>Set Your Pick</h5>
+                    <h5 style={styles.title}>Set Your Pick</h5>
                     <br/>
                     <Button 
                         style={
