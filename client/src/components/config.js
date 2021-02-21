@@ -1,0 +1,1 @@
+export const API_URL = process.env.NODE_ENV === 'cloudinary://CLOUD_APIKEY:CLOUD_API_SECRET';
