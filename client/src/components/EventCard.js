@@ -1,11 +1,11 @@
 import { Button, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import useGeoLocation from '../../hooks/useGeoLocation';
+import useGeoLocation from '../hooks/useGeoLocation';
 import axios from 'axios';
-import useFriends from '../../hooks/useFriends';
+import useFriends from '../hooks/useFriends';
 
-function Event() {
+function EventCard() {
 
     const [restaurant, setRestaurant] = useState(false);
     const [movie, setMovie] = useState(false);
@@ -137,4 +137,4 @@ function Event() {
     );
 }
 
-export default Event;
+export default EventCard;

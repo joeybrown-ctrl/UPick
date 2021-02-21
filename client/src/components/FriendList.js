@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Row, Col, Button, Image } from 'react-bootstrap';
-import Search from '../Search/Search';
-import useFriends from '../../hooks/useFriends';
+import Search from './Search/Search';
+import useFriends from '../hooks/useFriends';
 
 function FriendList() {
 
