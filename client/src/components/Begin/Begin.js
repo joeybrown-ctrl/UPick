@@ -16,15 +16,15 @@ function Begin() {
 
         
         cardDiv: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
         },
 
         btnBegin: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             boxShadow: '0 12px 16px 0 #ff4747, 0 17px 50px 0 #ff4747',
             /* width: 300px */
         }

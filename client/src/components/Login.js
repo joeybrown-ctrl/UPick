@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
-import useAuth from '../../hooks/auth';
+import useAuth from '../hooks/auth';
 import { Card, Form, Button } from 'react-bootstrap';
 
-const Login = () => {
+const LoginCard = () => {
     const { login, isLoggedIn } = useAuth();
     // History and location are hooks we can use to manipulate our page's history!
     const history = useHistory();
@@ -120,4 +120,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginCard;

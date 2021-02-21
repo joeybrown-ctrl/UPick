@@ -3,20 +3,23 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import axios from 'axios';
 import useAuth from './hooks/auth';
 // import Begin from './components/Begin/Begin';
-import Signup from './components/Signup/Signup';
-import Login from './components/Login/Login';
+import Signup from './components/SignupCard';
+import Login from './components/Login';
 import Notes from './pages/Notes';
-import Friend from './components/Friend/Friend';
 import MainNav from './components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from './pages/Profile';
-import Event from './components/Event/Event';
 // import YourPicks from './pages/YourPicks';
 // import Activity from './components/Activity/Activity';
 import PickCard from './components/PickCard/PickCard';
 // import Header from './components/Header/Header';
 import YourPicks from './pages/PreviousPicks';
 import FinalPickCard from './components/FinalPickCard/FinalPickCard';
+import YouPicked from './pages/UPicked';
+import WePicked from './pages/WePicked';
+// import FriendCard from './components/FriendCard';
+import StartPick from './pages/StartPick';
+import SetPick from './pages/SetPick';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -45,11 +48,11 @@ function App() {
             <MainNav />
             {/* <Header/> */}
             <Switch>
-                <PrivateRoute exact path='/friend'>
-                    <Friend />
+                <PrivateRoute exact path='/startpick'>
+                    <StartPick />
                 </PrivateRoute>
-                <PrivateRoute exact path='/event'>
-                    <Event/>
+                <PrivateRoute exact path='/setpick'>
+                    <SetPick/>
                 </PrivateRoute>
                 <Route exact path='/pick/:id'>
                     <PickCard/>
@@ -71,6 +74,12 @@ function App() {
                 </Route>
                 <PrivateRoute exact path='/notes'>
                     <Notes />
+                </PrivateRoute>
+                <PrivateRoute exact path='/upicked'>
+                    <YouPicked />
+                </PrivateRoute>
+                <PrivateRoute exact path='/wepicked'>
+                    <WePicked />
                 </PrivateRoute>
                 <Route exact path='/'>
                     <Profile />
