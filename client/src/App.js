@@ -20,6 +20,7 @@ import WePicked from './pages/WePicked';
 // import FriendCard from './components/FriendCard';
 import StartPick from './pages/StartPick';
 import SetPick from './pages/SetPick';
+import UPickApp from './pages/UPickApp';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -45,6 +46,9 @@ function App() {
 
     return (
         <Router>
+            <Route exact path='/ourapp'>
+                <UPickApp />
+            </Route> 
             <MainNav />
             {/* <Header/> */}
             <Switch>
