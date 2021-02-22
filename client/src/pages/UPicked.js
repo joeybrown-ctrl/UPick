@@ -15,7 +15,7 @@ function YouPicked() {
     });
 
     function fetchVotes() {
-        axios.get(`/api/activities/${eventId}`).then(({ data }) => {
+        axios.get(`/api/activity/${eventId}`).then(({ data }) => {
             setResults(data);
         });
     }
