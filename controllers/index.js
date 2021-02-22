@@ -16,7 +16,7 @@ router.use('/api/auth', authRoutes);
 router.use('/api/event', eventRoutes);
 router.use('/api/invite', inviteRoutes);
 router.use('/api/vote', voteRoutes);
-router.use('./api/activity', activityRoutes);
+router.use('/api/activity', activityRoutes);
 
 // Export the router
 module.exports = router;

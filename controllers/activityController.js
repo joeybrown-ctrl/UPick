@@ -6,7 +6,7 @@ router.get('/:id', isAuthenticated, (req, res) => {
     // eslint-disable-next-line no-unused-vars
     const { id: eventId } = req.params;
     db.Activity.findAll({
-        where: { EventId: eventID },
+        where: { EventId: eventId },
         include: {
             model: db.Vote,
             include: db.User
