@@ -17,3 +17,5 @@ router.get('/:id', isAuthenticated, (req, res) => {
 });
 
 module.exports = router;
+
+// to do: create redirect from setPick to UPicked, and find a way to render the data in the UPickedCard component
