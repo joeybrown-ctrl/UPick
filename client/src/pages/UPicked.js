@@ -9,13 +9,13 @@ import axios from 'axios';
 function YouPicked() {
     const [results, setResults] = useState([]);
 
-    const { id: eventId } = useParams();
+    const { eventId } = useParams();
     useEffect(() => {
         setInterval(() => fetchVotes(), 10000);
     });
 
     function fetchVotes() {
-        axios.get(`/api/activities${eventId}`).then(({ data }) => {
+        axios.get(`/api/activities/${eventId}`).then(({ data }) => {
             setResults(data);
         });
     }
