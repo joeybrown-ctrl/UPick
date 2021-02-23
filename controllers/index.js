@@ -7,6 +7,7 @@ const authRoutes = require('./authController');
 const eventRoutes = require('./eventController');
 const inviteRoutes = require('./inviteController');
 const voteRoutes = require('./voteController');
+const activityRoutes = require('./activityController');
 
 // Hook up to the router
 router.use('/api/notes', noteRoutes);
@@ -15,6 +16,7 @@ router.use('/api/auth', authRoutes);
 router.use('/api/event', eventRoutes);
 router.use('/api/invite', inviteRoutes);
 router.use('/api/vote', voteRoutes);
+router.use('/api/activity', activityRoutes);
 
 // Export the router
 module.exports = router;

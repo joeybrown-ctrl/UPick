@@ -35,6 +35,7 @@ function YouPicked() {
             setResults(transformedVotes);
         });
     }
+  
     return(
         <>
             {JSON.stringify(results)}
