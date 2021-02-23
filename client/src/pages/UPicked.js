@@ -13,7 +13,7 @@ function YouPicked() {
         setInterval(() => fetchVotes(),10000);
     },[]);
     function fetchVotes() {
-        axios.get(`/api/activities/${eventId}`).then(({ data }) => {
+        axios.get(`/api/activity/${eventId}`).then(({ data }) => {
             const transformedVotes = data.map(activity => {
                 const total = {
                     yes: 0,
