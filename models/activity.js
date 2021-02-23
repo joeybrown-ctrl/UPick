@@ -38,6 +38,12 @@ module.exports = function (sequelize, DataTypes) {
                 as: 'Event'
             }
         });
+
+        // look up hasMany in Sequelize docs to see if we can incorporate the belongsTo into this association
+        // After reading the docs it looks like the hasMany we have on line 45 is fine
+
+        Activity.hasMany(models.Vote, {
+        });
     };
 
     return Activity;
