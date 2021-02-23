@@ -42,13 +42,3 @@ const MainNav = () => {
 };
 
 export default MainNav;
-
-{/* <Navbar.Toggle aria-controls="responsive-navbar-nav"/> */}
-{/* <Navbar.Collapse id="responsive-navbar-nav "> */}
-
-{/* <Nav.Link href="/profile">Begin</Nav.Link> */}
-{/* <Nav.Link href="/friend"><i class="fas fa-users"></i></Nav.Link> */}
-{/* <Nav.Link href="/event">Event</Nav.Link> */}
-{/* <Nav.Link href="/profile"><i className="fas fa-user-circle"></i></Nav.Link> */}
-
-{/* </Navbar.Collapse> */}

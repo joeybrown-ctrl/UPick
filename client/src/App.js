@@ -45,12 +45,12 @@ function App() {
     });
 
     return (
+        
         <Router>
             <Route exact path='/ourapp'>
                 <UPickApp />
             </Route> 
             <MainNav />
-            {/* <Header/> */}
             <Switch>
                 <PrivateRoute exact path='/startpick'>
                     <StartPick />
