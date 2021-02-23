@@ -1,45 +1,11 @@
 import { Card, Button } from 'react-bootstrap';
 // import TinderCard from 'react-tinder-card';
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
-function UPickedCard() {
+function UPickedCard(props) {
 
+    const { results } = props;
     // const ENABLED_COLOR = '#FBE18B';
     // const DISABLED_COLOR = '#FFD217';
-
-    const [results, setResults] = useState([]);
-    const { eventId } = useParams();
-    useEffect(() => {
-        setInterval(() => fetchVotes(),10000);
-    },[]);
-    function fetchVotes() {
-        axios.get(`/api/activity/${eventId}`).then(({ data }) => {
-            const yesVotes = [];
-            const transformedVotes = data.map(activity => {
-                const total = {
-                    yes: 0,
-                    no: 0
-                };
-                activity?.Votes.forEach(vote => {
-                    if (vote.status) {
-                        total.yes++;
-                        yesVotes.push(total.yes);
-                        console.log(yesVotes);
-                    } else if (!vote.status) {
-                        total.no++;
-                    }
-                });
-                return {
-                    total,
-                    Name: activity.Name,
-                    URL: activity.URL
-                };
-            });
-            setResults(transformedVotes);
-        });
-    }
 
     const styles = {
 
@@ -137,6 +103,14 @@ function UPickedCard() {
     return(
         <div className='gradient'>
             <div style={styles.cardDiv}>
+                {results.map(result => {
+                    return (
+                        <div>
+                            <h2>{result.name}</h2>
+                            <img src={result.image} />
+                        </div>
+                    );
+                })}
                 <Card style={styles.card}>
                     {/* <br/> */}
                     <h5 style={styles.h5}>Congrats!</h5>
@@ -150,7 +124,6 @@ function UPickedCard() {
                     </div>
                     <br/>
                     <h4 style={styles.h4}>Default Pick Choice</h4>
-                    {JSON.stringify(results)}
                     <Button style={styles.btn1}>Send RSVP</Button>
                     <Button style={styles.btn2}>I'm Done</Button>
 
