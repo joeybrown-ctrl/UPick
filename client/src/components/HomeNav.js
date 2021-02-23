@@ -1,22 +1,32 @@
 import React from 'react';
-import { Navbar, Form, Button, Nav, FormControl } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 
 
 function HomeNav() {
 
-    return(
+    const styles={
+
+        // root: {
+        //     display: 'flex',
+        //     flexGrow: 1
+        // },
+
+        navLink: {
+            fontSize: '12pt'
+        }
+    };
+
+    return( 
+
         <div>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <Navbar.Brand href="#home">UPick</Navbar.Brand>
+                <Nav className="ml-auto">
+                    <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
+                    <Nav.Link style={styles.navLink} href="#functionality">Functionality</Nav.Link>
+                    <Nav.Link style={styles.navLink} href="#design">Design</Nav.Link>
+                    <Nav.Link style={styles.navLink} href="#creators">Creators</Nav.Link>
                 </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-primary">Search</Button>
-                </Form>
             </Navbar>
         </div>
     );
