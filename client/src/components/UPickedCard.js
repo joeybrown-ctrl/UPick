@@ -103,27 +103,29 @@ function UPickedCard(props) {
     return(
         <div className='gradient'>
             <div style={styles.cardDiv}>
-                {results.map(result => {
-                    return (
-                        <div>
-                            <h2>{result.Name}</h2>
-                            <img src={result.URL} />
-                        </div>
-                    );
-                })}
                 <Card style={styles.card}>
-                    {/* <br/> */}
+                    {/* {results.map(result => {
+                        return(
+                            <div>
+                                <h2>{result.Name}</h2>
+                                <img src={result.URL} />
+                            </div>
+                        );
+                    })} */}
+
                     <h5 style={styles.h5}>Congrats!</h5>
                     <h1 style={styles.h1}>UPicked!</h1>
+                    
                     <div style={styles.imgDiv}>
-                        <img 
+                        <img
                             fluid
                             style={styles.cardImg}
                             alt={'Your Pick'}
-                            src={'../assets/fooddefault.png'} />
+                            src={results.URL} />
                     </div>
                     <br/>
-                    <h4 style={styles.h4}>Default Pick Choice</h4>
+                    <h4 style={styles.h4}>{results.Name}</h4>
+                    
                     <Button style={styles.btn1}>Send RSVP</Button>
                     <Button style={styles.btn2}>I'm Done</Button>
 
