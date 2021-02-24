@@ -46,7 +46,7 @@ function FriendCard() {
                     <br/>
                     <div className="friend-list">
                         <FriendList/>
-                        <Link to='/event'>
+                        <Link to='/setpick'>
                             <Button style={styles.pick} type='submit' block>Next</Button>
                         </Link>
                         <br/>

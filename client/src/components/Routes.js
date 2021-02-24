@@ -3,9 +3,9 @@ function Routes() {
 
     return(
         <>
-        <Switch>
+            <Switch>
                 <Route 
-                exact path='/startpick'>
+                    exact path='/startpick'>
                     <StartPick />
                 </Route>
                 <Route exact path='/setpick'>
@@ -46,4 +46,4 @@ function Routes() {
     );
 }
 
-export default Routes
+export default Routes;

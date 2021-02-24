@@ -45,6 +45,14 @@ function PickCard() {
         axios.post('/api/vote', data);
     }
 
+    // if (votes === 10) {
+    //     return <Redirect to={{
+    //         // If someone goes to signup, this transfers the redirect
+    //         pathname: '/upicked/:id',
+    //     }}
+    //     />;
+    // }
+
     const styles = {
         btn: {
             backgroundColor: '#FFFFFF',
