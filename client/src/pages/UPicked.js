@@ -39,7 +39,7 @@ function YouPicked() {
 
     return(
         <>
-            <UPickedCard results={results.length > 0 ? <UPickedCard results={results[0]} /> : <h2>Loading</h2>} />
+            {results.length > 0 ? <UPickedCard results={results[0]} /> : <h2>Loading</h2>} 
             {/* {JSON.stringify(results)} */}
         </>
     );
