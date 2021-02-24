@@ -106,8 +106,8 @@ function UPickedCard(props) {
                 {results.map(result => {
                     return (
                         <div>
-                            <h2>{result.name}</h2>
-                            <img src={result.image} />
+                            <h2>{result.Name}</h2>
+                            <img src={result.URL} />
                         </div>
                     );
                 })}
