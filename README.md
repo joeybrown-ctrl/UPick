@@ -32,8 +32,6 @@ Utilizing two different API calls run through an algorithm, U-pick shows the use
 
 U-Pick is built using React, React-Bootstrap, and React Router on the Front End. The Back End is built with Node.js, Express routes, and Sequelize for databasing. The Zomato API and Rapid API (Unogsng) are used to retrieve restaurant and entertainment data. U-pick was tested with Insomnia, linted using ES Lint, built on Visual Studio Code, and deployed to Heroku. 
 
-U-Pick 
-
   <hr>
 
 ![image of U-Pick's landing page]()

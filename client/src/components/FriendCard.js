@@ -1,13 +1,14 @@
 import { Card, Button } from 'react-bootstrap';
-import FriendList from '../FriendList/FriendList';
+import FriendList from './FriendList';
 import { Link } from 'react-router-dom';
 
-function Friend() {
+function FriendCard() {
 
     const styles = {
         card: {
             backgroundColor: 'transparent',
-            height: '66vh'
+            height: '66vh',
+            border: '0',
         },
 
         pick: {
@@ -25,7 +26,8 @@ function Friend() {
 
         title: {
             textAlign: 'center',
-            paddingBottom: '10px'
+            paddingBottom: '10px',
+            color: '#f9f9f9c9'
         },      
 
         invite: {
@@ -44,7 +46,7 @@ function Friend() {
                     <br/>
                     <div className="friend-list">
                         <FriendList/>
-                        <Link to='/event'>
+                        <Link to='/setpick'>
                             <Button style={styles.pick} type='submit' block>Next</Button>
                         </Link>
                         <br/>
@@ -56,4 +58,4 @@ function Friend() {
     );
 }
 
-export default Friend;
+export default FriendCard;

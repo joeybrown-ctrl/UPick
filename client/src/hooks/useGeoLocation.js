@@ -4,8 +4,8 @@ const useGeoLocation = () => {
     const [location, setLocation] = useState({
         loaded: false,
         coordinates: {
-            latitude: '',
-            longitude: ''
+            latitude: 0,
+            longitude: 0,
         },
     });
 
