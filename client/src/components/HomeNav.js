@@ -1,25 +1,26 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+// import Container from 'react-bootstrap/Container';
 
 
 function HomeNav() {
 
     const styles={
 
-        // root: {
-        //     display: 'flex',
-        //     flexGrow: 1
-        // },
+        root: {
+            // display: 'flex',
+            flexGrow: 1
+        },
 
         navLink: {
-            fontSize: '12pt'
+            fontSize: '8pt'
         }
     };
 
     return( 
 
-        <div>
-            <Navbar bg="light" variant="light">
+        <>
+            <Navbar style={styles.root} bg="light" variant="light">
                 <Navbar.Brand href="#home">UPick</Navbar.Brand>
                 <Nav className="ml-auto">
                     <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
@@ -28,7 +29,7 @@ function HomeNav() {
                     <Nav.Link style={styles.navLink} href="#creators">Creators</Nav.Link>
                 </Nav>
             </Navbar>
-        </div>
+        </>
     );
 }
 

@@ -47,47 +47,49 @@ function App() {
     return (
         
         <Router>
-            <Route exact path='/ourapp'>
-                <UPickApp />
-            </Route> 
-            <MainNav />
             <Switch>
-                <PrivateRoute exact path='/startpick'>
-                    <StartPick />
-                </PrivateRoute>
-                <PrivateRoute exact path='/setpick'>
-                    <SetPick/>
-                </PrivateRoute>
-                <Route exact path='/pick/:id'>
-                    <PickCard/>
-                </Route>
-                <PrivateRoute exact path='/profile'>
-                    <Profile />
-                </PrivateRoute>
-                <PrivateRoute exact path='/yourpicks'>
-                    <YourPicks />
-                </PrivateRoute>
-                <PrivateRoute exact path='/finalpick'>
-                    <FinalPickCard />
-                </PrivateRoute>
-                <Route path='/signup'>
-                    <Signup />
-                </Route>
-                <Route path='/login'>
-                    <Login />
-                </Route>
-                <PrivateRoute exact path='/notes'>
-                    <Notes />
-                </PrivateRoute>
-                <PrivateRoute exact path='/upicked/:eventId'>
-                    <YouPicked />
-                </PrivateRoute>
-                <PrivateRoute exact path='/wepicked'>
-                    <WePicked />
-                </PrivateRoute>
-                <Route exact path='/'>
-                    <Profile />
-                </Route>  
+                <Route exact path='/ourapp'>
+                    <UPickApp />
+                </Route> 
+                <>
+                    <MainNav />
+                    <PrivateRoute exact path='/startpick'>
+                        <StartPick />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/setpick'>
+                        <SetPick/>
+                    </PrivateRoute>
+                    <Route exact path='/pick/:id'>
+                        <PickCard/>
+                    </Route>
+                    <PrivateRoute exact path='/profile'>
+                        <Profile />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/yourpicks'>
+                        <YourPicks />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/finalpick'>
+                        <FinalPickCard />
+                    </PrivateRoute>
+                    <Route path='/signup'>
+                        <Signup />
+                    </Route>
+                    <Route path='/login'>
+                        <Login />
+                    </Route>
+                    <PrivateRoute exact path='/notes'>
+                        <Notes />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/upicked/:eventId'>
+                        <YouPicked />
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/wepicked'>
+                        <WePicked />
+                    </PrivateRoute>
+                    <Route exact path='/'>
+                        <Profile />
+                    </Route>  
+                </>
             </Switch>
         </Router>
     );
