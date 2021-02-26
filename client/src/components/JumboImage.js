@@ -1,30 +1,23 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+// import Jumbotron from 'react-bootstrap/Jumbotron';
+// import Container from 'react-bootstrap/Container';
 
 
 function JumboImage() {
 
     const styles = {
         jumboImg: {
-            backgroundImage: 'url(' + '../../assets/JumboImage.png' + ')',
-            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
             width: '100%',
-            height: '100%',
-
-            
         }
     };
 
     return(
-        <Jumbotron style={styles.jumboImg} fluid>
-            <Container>
-
-            </Container>
-        </Jumbotron>
-        // <Image 
-        //     // style={styles.jumbo} 
-        //     src="../../assets/JumboImage.png" fluid/>
+        <div>
+            <Image src="../../assets/JumboImage.png" fluid style={styles.jumboImg} />
+        </div>
     );
 }
 

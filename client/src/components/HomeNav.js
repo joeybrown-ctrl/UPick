@@ -8,27 +8,36 @@ function HomeNav() {
     const styles={
 
         root: {
-            // display: 'flex',
-            flexGrow: 1
+            background: 'none'
         },
 
         navLink: {
-            fontSize: '8pt'
+            fontSize: '14pt',
+            color: '#1a2930'
+        },
+
+        toggle: {
+            borderColor: '#ffffff',
+            
         }
     };
 
     return( 
 
         <>
-            <Navbar style={styles.root} bg="light" variant="light">
+            <Navbar expand="lg">
                 <Navbar.Brand href="#home">UPick</Navbar.Brand>
-                <Nav className="ml-auto">
-                    <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
-                    <Nav.Link style={styles.navLink} href="#functionality">Functionality</Nav.Link>
-                    <Nav.Link style={styles.navLink} href="#design">Design</Nav.Link>
-                    <Nav.Link style={styles.navLink} href="#creators">Creators</Nav.Link>
-                </Nav>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" style={styles.toggle}/>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#functionality">Functionality</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#design">Design</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#creators">Creators</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
+
         </>
     );
 }
