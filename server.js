@@ -16,11 +16,6 @@ const db = require('./models');
 const morgan = require('morgan');
 // Compression
 const compression = require('compression');
-//Required for upload image ability
-const cloudinary = require('cloudinary');
-const formData = require('express-form-data');
-const cors = require('cors');
-const { CLIENT_ORIGIN } = require('./config/config.js');
 
 // Creating express app
 const app = express();
