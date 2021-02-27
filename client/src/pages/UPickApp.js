@@ -2,6 +2,7 @@ import HomeNav from '../components/HomeNav';
 import JumboImage from '../components/JumboImage';
 import About from '../components/About';
 import FunctionCarousel from '../components/FunctionCarousel';
+import Functionality from '../components/Functionality'; 
 
 
 function UPickApp() {
@@ -13,6 +14,7 @@ function UPickApp() {
             <JumboImage/>
             <About/>
             <FunctionCarousel/>
+            <Functionality/>
 
         </>  
     );
