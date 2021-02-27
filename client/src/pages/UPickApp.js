@@ -1,7 +1,8 @@
 import HomeNav from '../components/HomeNav';
 import JumboImage from '../components/JumboImage';
-import Overview from '../components/Overview';
-// import JumboImage from '../components/JumboImage';
+import About from '../components/About';
+import FunctionCarousel from '../components/FunctionCarousel';
+
 
 function UPickApp() {
 
@@ -10,7 +11,8 @@ function UPickApp() {
         <>
             <HomeNav/>
             <JumboImage/>
-            <Overview/>
+            <About/>
+            <FunctionCarousel/>
 
         </>  
     );
