@@ -25,6 +25,12 @@ function Functionality() {
 
         text: {
             fontSize: '16pt'
+        },
+
+        spanText: {
+            fontSize: '17pt',
+            fontWeight: 'bold',
+            color: '#f7ce3e'
         }
     };
 
@@ -58,7 +64,7 @@ function Functionality() {
                 </Row>
                 <Row>
                     <Col>
-                        <p style={styles.text}><span style={styles.spanHeader}>Vote | </span> The user will then receive an variety of choices to vote on. For choices they would want, users can "Swipe Right" or use the "Heart Icon". Similarly the user can "Swipe Left" or use the "X Icon" to vote against that choice. After the user has voted on their selections, they will be redirected to see UPicked results. </p>
+                        <p style={styles.text}><span style={styles.spanHeader}>Vote | </span> The user will then receive an variety of choices to vote on. For choices they would want, users can <span style={styles.spanText}>"Swipe Right"</span> or use the <span style={styles.spanText}>"Heart Icon"</span>. Similarly the user can <span style={styles.spanText}>"Swipe Left"</span> or use the <span style={styles.spanText}>"X Icon"</span> to vote against that choice. After the user has voted on their selections, they will be redirected to see UPicked results. </p>
                     </Col>
                 </Row>
                 <Row>
@@ -66,7 +72,6 @@ function Functionality() {
                         <p style={styles.text}><span style={styles.spanHeader}>Results | </span> User voted, but UPicked it! Here the user will see what choice was both agreed upon between users. They can confirm the choice by sending a RSVP. If they are not happy with the choice they can also start UPick over again. </p>
                     </Col>
                 </Row>
-
             </Container>
         </div>
     );

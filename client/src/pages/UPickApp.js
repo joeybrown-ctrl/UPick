@@ -3,6 +3,7 @@ import JumboImage from '../components/JumboImage';
 import About from '../components/About';
 import FunctionCarousel from '../components/FunctionCarousel';
 import Functionality from '../components/Functionality'; 
+import Design from '../components/Design';
 
 
 function UPickApp() {
@@ -15,7 +16,7 @@ function UPickApp() {
             <About/>
             <FunctionCarousel/>
             <Functionality/>
-
+            <Design/>
         </>  
     );
 }

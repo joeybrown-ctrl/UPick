@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
 
 function FunctionCarousel() {
     const styles = {
@@ -41,14 +42,16 @@ function FunctionCarousel() {
 
     return (
         <div style={styles.containerStyle}>
-            <ReactCardCarousel autoplay={true}>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-                <Image style={styles.image} src="../../assets/Mobile.png"/>
-            </ReactCardCarousel>
+            <Container>
+                <ReactCardCarousel autoplay={true}>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                </ReactCardCarousel>
+            </Container>
         </div>
     );
 }
