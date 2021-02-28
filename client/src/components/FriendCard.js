@@ -21,7 +21,8 @@ function FriendCard() {
             marginTop: '10vh',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'flex-start'
+            alignItems: 'flex-start',
+            paddingBottom: '30px'
         },
 
         title: {

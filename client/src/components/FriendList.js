@@ -80,7 +80,7 @@ function FriendList() {
                         <Image style={styles.icon} src="./assets/friendicon.png" rounded />
                     </Col>
                     <br/>
-                    <Col>  
+                    <Col xs={10}>  
                         <Button key={id} value={email} style={styles.friendBtn} onClick={ () => handleFriendChange(email)} block>{email}</Button>
                     </Col>
                 </Row>
