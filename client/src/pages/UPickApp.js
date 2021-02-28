@@ -4,6 +4,7 @@ import About from '../components/About';
 import FunctionCarousel from '../components/FunctionCarousel';
 import Functionality from '../components/Functionality'; 
 import Design from '../components/Design';
+import Developers from '../components/Developers';
 
 
 function UPickApp() {
@@ -17,6 +18,7 @@ function UPickApp() {
             <FunctionCarousel/>
             <Functionality/>
             <Design/>
+            <Developers/>
         </>  
     );
 }

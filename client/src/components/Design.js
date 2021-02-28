@@ -11,6 +11,7 @@ function Design() {
 
         root: {
             paddingTop: '60px',
+            paddingBottom: '50px'
         },
 
         header: {
@@ -24,6 +25,14 @@ function Design() {
             backgroundSize: 'cover',
             width: '100%',
             paddingTop: '40px'
+        },
+
+        text: {
+            fontSize: '16pt'
+        },
+
+        overview: {
+            paddingTop:'40px'
         }
     };    
 
@@ -38,6 +47,19 @@ function Design() {
                 <Row>
                     <Col>
                         <Image src="../../assets/wireframe.png" fluid style={styles.jumboImg}></Image>
+                    </Col>
+                </Row>
+                <Row style={styles.overview}>
+                    <Col>
+                        <p style={styles.text}>
+                            UPick was built for mobile users. Above you will see the wireframe built during the planning stages of this application. We wanted the design on this application to be simple, visually pleasing, with great user interaction.
+                        </p>
+                    </Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col>
+                        <Image src="../../assets/branding.png" fluid style={styles.jumboImg}></Image>
                     </Col>
                 </Row>
             </Container>

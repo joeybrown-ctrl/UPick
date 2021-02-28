@@ -33,7 +33,7 @@ function HomeNav() {
                         <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
                         <Nav.Link style={styles.navLink} href="#functionality">Functionality</Nav.Link>
                         <Nav.Link style={styles.navLink} href="#design">Design</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#creators">Creators</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#creators">Developers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
