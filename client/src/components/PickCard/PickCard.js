@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import { Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
@@ -45,13 +46,13 @@ function PickCard() {
         axios.post('/api/vote', data);
     }
 
-    // if (votes === 10) {
-    //     return <Redirect to={{
-    //         // If someone goes to signup, this transfers the redirect
-    //         pathname: '/upicked/:id',
-    //     }}
-    //     />;
-    // }
+    if (vote === 10) {
+        return <Redirect to={{
+            // If someone goes to signup, this transfers the redirect
+            pathname: '/upicked/:id',
+        }}
+        />;
+    }
 
     const styles = {
         btn: {

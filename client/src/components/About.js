@@ -7,6 +7,10 @@ function About() {
 
     const styles = {
 
+        root: {
+            transitionTimingFunction: 'ease-in',
+        },
+
         h2Row: {
             textAlign: 'center',
             width: '100%'
@@ -56,7 +60,7 @@ function About() {
 
     return (
         <div>
-            <Container>
+            <Container style={styles.root}>
                 <div style={styles.h2Row}>
                     <p style={styles.h2}>UPick</p>
                 </div>
