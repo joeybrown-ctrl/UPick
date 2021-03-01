@@ -33,6 +33,7 @@
         "express": "^4.17.0",
         "express-form-data": "^2.0.14",
         "express-jwt": "^6.0.0",
+        "image-upload-react": "^1.4.9",
         "jsonwebtoken": "^8.5.1",
         "lodash": "^4.17.20",
         "morgan": "^1.10.0",

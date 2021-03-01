@@ -13,15 +13,19 @@ const styles = {
     txt: {
         color: '#c5c1c0',
         textAlign: 'center'
+    },
+
+    row: {
+        textAlign: 'center'
     }
 };
 
 function ActivityBtn() {
     return (
         <>
-            <Row>
+            <div style={styles.row}>
                 <p style={styles.txt}>Can't decide what to do?</p>
-            </Row>
+            </div>
             <Row>
                 {/* When this button is clicked it takes the user to the inital start a pick page */}
                 <Button style={styles.btn} href='/startpick'>

@@ -1,10 +1,11 @@
 import { Card } from 'react-bootstrap';
 import ActivityBtn from '../components/ActivityBtn';
-import CardImg from '../components/CardImg/CardImg';
+// import CardImg from '../components/CardImg/CardImg';
 import ProfileBtn from '../components/ProfileBtn';
 // import ProfileBio from '../components/ProfileBio';
 import ProfileTitle from '../components/ProfileTitle';
 import PendingBtn from '../components/PendingBtn';
+import ProfilePicture from '../components/ProfilePicture';
 
 
 function Profile() {
@@ -16,7 +17,7 @@ function Profile() {
             width: '400px',
             padding: '35px',
             maxWidth: '85vw',
-            height: '66vh',
+            height: '100vh',
             borderRadius: '20px',
             // backgroundSize: 'cover',
             // backgroundPosition: 'center',
@@ -35,7 +36,8 @@ function Profile() {
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
-                    <CardImg/>
+                    {/* <CardImg/> */}
+                    <ProfilePicture/>
                     <ProfileTitle/>
                     <PendingBtn/>
                     <br/>

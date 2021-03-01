@@ -3,7 +3,6 @@ import { Button, Row } from 'react-bootstrap';
 const styles = {
     btn: {
         // float: 'center',
-        width: '44%',
         // height: '35px',
         padding: '10px 5px 10px 5px',
         // margin: '3px 1px 3px 1x',
@@ -15,9 +14,9 @@ const styles = {
     },
 
     row: {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
+        // display: 'flex',
+        // justifyContent: 'space-evenly',
+        // alignItems: 'center',
 
     }
 
@@ -25,14 +24,19 @@ const styles = {
 
 const ProfileBtn = () => {
     return (
-        <Row style={styles.row}>
-            <Button style={styles.btn} href='/yourpicks'>
-                <i className="fas fa-search"></i> Your Picks
-            </Button>
-            <Button style={styles.btn} href='/friend'>
-                <i className="fas fa-users"></i> Friends
-            </Button>
-        </Row>
+        <>
+            <Row style={styles.row}>
+                <Button style={styles.btn} href='/yourpicks' block>
+                    <i className="fas fa-search"></i> Your Picks
+                </Button>
+            </Row>
+            <br/>
+            <Row>
+                <Button style={styles.btn} href='/friend' block>
+                    <i className="fas fa-users"></i> Friends
+                </Button>
+            </Row>
+        </>
     );
 };
 
