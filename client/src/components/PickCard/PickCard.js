@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import { Button } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
@@ -92,12 +92,7 @@ function PickCard() {
             console.log(index, alreadyRemoved, id, childRefs);
             childRefs[index].current.swipe(direction); // Swipe the card!
         }
-        // if(direction === 'left') {
-        //     voteNo(id);
-        // }
-        // else if(direction === 'right') {
-        //     voteYes(id);
-        // }
+        
         console.log('You swiped: ' + direction + id);
     };
 
