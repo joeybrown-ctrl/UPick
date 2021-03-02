@@ -7,7 +7,6 @@ import ProfileTitle from '../components/ProfileTitle';
 // import PendingBtn from '../components/PendingBtn';
 import ProfilePicture from '../components/ProfilePicture';
 
-
 function Profile() {
 
     const styles = {
@@ -32,6 +31,8 @@ function Profile() {
     };
 
     return (
+
+
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
