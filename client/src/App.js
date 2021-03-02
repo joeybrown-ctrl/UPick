@@ -84,7 +84,7 @@ function App() {
                     <PrivateRoute exact path='/upicked/:eventId'>
                         <YouPicked />
                     </PrivateRoute>
-                    <PrivateRoute exact path='/wepicked'>
+                    <PrivateRoute exact path='/wepicked/:eventId'>
                         <WePicked />
                     </PrivateRoute>
                     <PrivateRoute exact path='/onboarding'>

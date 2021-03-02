@@ -10,9 +10,9 @@ const SignupCard = () => {
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // For our redirector
+    // For our redirect
     const [redirectToLogin, toggleRedirect] = useState(false);
-    // This is the key part to our redirector. We can pull the prior location out here, if it exists
+    // This is the key part to our redirect. We can pull the prior location out here, if it exists
     const { from } = location.state || { from: { pathname: '/' } };
 
     const handleSubmit = event => {

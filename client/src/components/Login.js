@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, useHistory, useLocation, Link } from 'react-router-dom';
 import useAuth from '../hooks/auth';
 import { Card, Form, Button } from 'react-bootstrap';
 
@@ -68,7 +68,7 @@ const LoginCard = () => {
             color: '#f9f9f9c9'
         },
         
-        redirect: {
+        onboarding: {
             color: '#f9f9f9c9',
             /* color: #2d2d2dbb */
         },
@@ -110,8 +110,13 @@ const LoginCard = () => {
                             <br />
                             <Button style={styles.btn} type='submit' block>Login</Button>
                         </Form.Group>
-                        <p style={styles.redirect}>Need an account?</p>
-                        <p style={styles.link} onClick={() => toggleRedirect(true)}>Signup Here</p>
+                        <p style={styles.link} onClick={() => toggleRedirect(true)}> Need an account? Signup Here</p>
+                        <Link>
+                            <p style={styles.onboarding}> Click to see how UPick works.</p>
+                        </Link>
+                        <Link>
+                            <p></p>
+                        </Link>
             
                     </Form>
                 </Card>

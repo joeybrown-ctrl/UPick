@@ -15,12 +15,11 @@ function Profile() {
             backgroundColor: 'transparent',
             position: 'relative',
             width: '400px',
-            padding: '35px',
+            paddingRight: '35px',
+            paddingLeft: '35px',
             maxWidth: '85vw',
             height: '100vh',
             borderRadius: '20px',
-            // backgroundSize: 'cover',
-            // backgroundPosition: 'center',
             boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
         },
 

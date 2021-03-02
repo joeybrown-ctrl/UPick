@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TinderCard from 'react-tinder-card';
 import { Button } from 'react-bootstrap';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
@@ -13,6 +13,7 @@ function PickCard() {
     console.log(id);
     const [picks, setPicks] = useState([]);
     const [childRefs, setChildRefs] = useState([]);
+    const [voteCount, setVoteCount] =useState(0);
     // let childRefs = [];
 
     useEffect(() => {
@@ -36,6 +37,7 @@ function PickCard() {
             status: false
         };
         axios.post('/api/vote', data);
+        setVoteCount(voteCount + 1);
     }
 
     function voteYes(id) {
@@ -44,15 +46,16 @@ function PickCard() {
             status: true
         };
         axios.post('/api/vote', data);
+        setVoteCount(voteCount + 1);
     }
 
-    // if (vote === 10) {
-    //     return <Redirect to={{
-    //         // If someone goes to signup, this transfers the redirect
-    //         pathname: '/upicked/:id',
-    //     }}
-    //     />;
-    // }
+    if (voteCount === 10) {
+        return <Redirect to={{
+            // If someone goes to signup, this transfers the redirect
+            pathname: `/upicked/${id}`,
+        }}
+        />;
+    }
 
     const styles = {
         btn: {
