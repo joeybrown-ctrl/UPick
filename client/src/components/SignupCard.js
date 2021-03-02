@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Redirect, useHistory, useLocation, Link } from 'react-router-dom';
 import useAuth from '../hooks/auth';
 import { Card, Form, Button } from 'react-bootstrap';
 
@@ -10,9 +10,9 @@ const SignupCard = () => {
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // For our redirector
+    // For our redirect
     const [redirectToLogin, toggleRedirect] = useState(false);
-    // This is the key part to our redirector. We can pull the prior location out here, if it exists
+    // This is the key part to our redirect. We can pull the prior location out here, if it exists
     const { from } = location.state || { from: { pathname: '/' } };
 
     const handleSubmit = event => {
@@ -79,7 +79,15 @@ const SignupCard = () => {
             color: '#f9f9f9c9',
             cursor: 'pointer'
 
-        }
+        },
+
+        onboarding: {
+            fontSize: '10pt',
+            color: '#1a2930',
+            backgroundColor: '#f9f9f9c9',
+            border: 0,
+            padding: '8px'
+        },
     };
 
     return (
@@ -117,6 +125,14 @@ const SignupCard = () => {
                         Already have an account? 
                         </p>
                         <p style={styles.link} onClick={() => toggleRedirect(true)}>Login Here</p>
+                        <br/>
+                        <Link to={'/onboarding'}>
+                            <Button style={styles.onboarding} block> Learn how Upick works</Button>
+                        </Link>
+                        <br/>
+                        <Link to={'/ourapp'}>
+                            <Button style={styles.onboarding} block>Meet Upick's developers</Button>
+                        </Link>
                     </Form>
                 </Card>
             </div>

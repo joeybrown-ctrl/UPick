@@ -1,16 +1,17 @@
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // import TinderCard from 'react-tinder-card';
 
 function UPickedCard(props) {
 
     const { results } = props;
-    // const ENABLED_COLOR = '#FBE18B';
-    // const DISABLED_COLOR = '#FFD217';
+    const { eventId } = useParams();
 
     const styles = {
 
         cardDiv: {
-            marginTop: '10vh',
+            marginTop: '5vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start',
@@ -23,7 +24,7 @@ function UPickedCard(props) {
             backgroundColor: 'transparent',
             border: '0',
             justifyContent: 'center',
-            height: '66vh',
+            height: '90vh',
             
         },
 
@@ -74,18 +75,9 @@ function UPickedCard(props) {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
+            width: '245px'
 
         },
-
-        // btn1Hover: {
-        //     margin: '10px 20px',
-        //     background: '#FED215',
-        //     border: 'none',
-        //     color: '#1a2930',
-        //     fontWeight: 'bold',
-        //     fontSize: '15pt',
-        //     letterSpacing: '2px',
-        // },
 
         btn2: {
             margin: '10px 20px',
@@ -94,8 +86,19 @@ function UPickedCard(props) {
             color: '#1a2930',
             fontWeight: 'bold',
             fontSize: '15pt',
-            letterSpacing: '2px'
+            letterSpacing: '2px',
+            width: '245px'
+        }, 
+
+        demoLink: {
+            textAlign: 'center',
+        },
+
+        demoText: {
+            color: '#f9f9f9c9',
+            fontSize: '11pt'
         }
+
 
     };
 
@@ -104,31 +107,27 @@ function UPickedCard(props) {
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
-                    {/* {results.map(result => {
-                        return(
-                            <div>
-                                <h2>{result.Name}</h2>
-                                <img src={result.URL} />
-                            </div>
-                        );
-                    })} */}
-
                     <h5 style={styles.h5}>Congrats!</h5>
                     <h1 style={styles.h1}>UPicked!</h1>
-                    
                     <div style={styles.imgDiv}>
                         <img
                             fluid
                             style={styles.cardImg}
-                            alt={'Your Pick'}
+                            alt={'U Picked'}
                             src={results.URL} />
                     </div>
                     <br/>
                     <h4 style={styles.h4}>{results.Name}</h4>
                     
-                    <Button style={styles.btn1}>Send RSVP</Button>
-                    <Button style={styles.btn2}>I'm Done</Button>
-
+                    <Link>
+                        <Button style={styles.btn1}>Start New Pick</Button>
+                    </Link>
+                    <Link>
+                        <Button style={styles.btn2}>I'm Done</Button>
+                    </Link>
+                    <Link style={styles.demoLink} to={{pathname:`/wepicked/${eventId}`}}>
+                        <p style={styles.demoText}>We Picked Demo</p>
+                    </Link>
                 </Card>
             </div>
 

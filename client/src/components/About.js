@@ -83,7 +83,7 @@ function About() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col style={styles.overview}>
+                    <Col id="About" style={styles.overview}>
                         <p style={styles.ovHeader}>For indecisive users, "UPick helps make small decisions seem less like big decisions." </p>
                         <p style={styles.ovText}>The average American couple spends <span style={styles.spanText}>5.5 days</span> deciding on what to eat each year. That’s <span style={styles.spanText}>132</span> hours of hearing the dreaded, “What do you want to eat?” over and over. American consumers are already flooded with choices in every aspect of their lives, that when it comes to small but important decisions like what to eat or what to watch they shouldn’t let indecisiveness take up any more time than needed. </p>
                         <p style={styles.ovText}>As an indecisive user and consumer I want an application to help myself and others make quick decisions regarding what to eat and watch. </p>

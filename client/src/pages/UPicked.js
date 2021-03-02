@@ -1,4 +1,6 @@
 import UPickedCard from '../components/UPickedCard';
+import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -10,7 +12,7 @@ function YouPicked() {
     const [results, setResults] = useState([]);
     const { eventId } = useParams();
     useEffect(() => {
-        setInterval(() => fetchVotes(),10000);
+        setInterval(() => fetchVotes(),5000);
     },[]);
     function fetchVotes() {
         axios.get(`/api/activity/${eventId}`).then(({ data }) => {
@@ -37,10 +39,47 @@ function YouPicked() {
         });
     }
 
+    const styles = {
+
+        cardDiv: {
+            marginTop: '2vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            height: '100vh',
+        },
+
+        card: {
+            // width: '18rem',
+            padding: '150px',
+            backgroundColor: 'transparent',
+            border: '0',
+            // justifyContent: 'center',
+            height: '80vh',
+            
+        },
+
+        spinnerDiv: {
+            justifyContent: 'center'
+        }
+    };
+
     return(
         <>
-            {results.length > 0 ? <UPickedCard results={results[0]} /> : <h2>Loading</h2>} 
-            {/* {JSON.stringify(results)} */}
+            {results.length > 0 ? 
+                <UPickedCard results={results[0]} /> : 
+                <div className='gradient'>
+                    <div style={styles.cardDiv}>
+                        <Card style={styles.card}>
+                            <div style={styles.spinnerDiv}>
+                                <Spinner animation="border" role="status" variant="light" size="xl">
+                                    <span className="sr-only">Loading...</span>
+                                </Spinner>
+                            </div>
+                        </Card>
+                    </div>
+                </div>}
+
         </>
     );
 }

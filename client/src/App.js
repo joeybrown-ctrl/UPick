@@ -21,6 +21,7 @@ import WePicked from './pages/WePicked';
 import StartPick from './pages/StartPick';
 import SetPick from './pages/SetPick';
 import UPickApp from './pages/UPickApp';
+import Onboarding from './pages/Onboarding';
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -83,9 +84,12 @@ function App() {
                     <PrivateRoute exact path='/upicked/:eventId'>
                         <YouPicked />
                     </PrivateRoute>
-                    <PrivateRoute exact path='/wepicked'>
+                    <PrivateRoute exact path='/wepicked/:eventId'>
                         <WePicked />
                     </PrivateRoute>
+                    <Route exact path='/onboarding'>
+                        <Onboarding />
+                    </Route>
                     <Route exact path='/'>
                         <Profile />
                     </Route>  

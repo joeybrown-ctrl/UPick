@@ -38,7 +38,7 @@ function Design() {
 
     return(
         <div>
-            <Container style={styles.root}>
+            <Container id="Design" style={styles.root}>
                 <Row>
                     <Col>
                         <p style={styles.header}>Design</p>

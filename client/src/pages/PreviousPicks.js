@@ -20,7 +20,7 @@ const styles = {
         width: '400px',
         padding: '35px',
         maxWidth: '85vw',
-        height: '66vh',
+        height: '70vh',
         borderRadius: '20px',
         boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
     },
@@ -54,8 +54,8 @@ function PreviousPicks() {
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
-                    <h5 style={styles.text}>Your Previous Picks</h5>
-                    <br/>
+                    <h5 style={styles.text}>Previous Picks</h5>
+                    {/* <br/> */}
                     {/* Shosh, you will want to map through the previous card picks here. 
                     I know this is just a display for now :) I am just making
                     notes for my own memory */}

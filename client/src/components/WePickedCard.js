@@ -1,13 +1,15 @@
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 // import TinderCard from 'react-tinder-card';
 
-function WePickedCard() {
+function WePickedCard(props) {
 
+    const { results } = props;
 
     const styles = {
 
         cardDiv: {
-            marginTop: '10vh',
+            marginTop: '5vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start',
@@ -20,7 +22,7 @@ function WePickedCard() {
             backgroundColor: 'transparent',
             border: '0',
             justifyContent: 'center',
-            height: '70vh',
+            height: '80vh',
             
         },
 
@@ -51,7 +53,7 @@ function WePickedCard() {
         },
         
         cardImg: {
-            maxWidth: '400px',
+            maxWidth: '200px',
             height: '30vh',
             borderRadius: '20px',
         },
@@ -71,6 +73,7 @@ function WePickedCard() {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
+            width: '245px'
 
         },
 
@@ -81,7 +84,12 @@ function WePickedCard() {
             color: '#1a2930',
             fontWeight: 'bold',
             fontSize: '15pt',
-            letterSpacing: '2px'
+            letterSpacing: '2px',
+            width: '245px'
+        },
+
+        linkDiv: {
+            justifyContent: 'center'
         }
     };
 
@@ -89,21 +97,25 @@ function WePickedCard() {
         <div className='gradient'>
             <div style={styles.cardDiv}>
                 <Card style={styles.card}>
-                    {/* <br/> */}
-                    <h5 style={styles.h5}>Slim Pickings!</h5>
+                    <h6 style={styles.h5}>Oh no, looks like you couldn't agree so...</h6>
                     <h1 style={styles.h1}>We Picked!</h1>
                     <div style={styles.imgDiv}>
                         <img 
                             fluid
                             style={styles.cardImg}
-                            alt={'Your Pick'}
-                            src={'../assets/fooddefault.png'} />
+                            alt={'We Picked'}
+                            src={results.URL} />
                     </div>
                     <br/>
-                    <h4 style={styles.h4}>Default Pick Choice</h4>
-                    <Button style={styles.btn1}>Send RSVP</Button>
-                    <Button style={styles.btn2}>Pick Again</Button>
-                    <Button style={styles.btn2}>I'm Done</Button>
+                    <h4 style={styles.h4}>{results.Name}</h4>
+                    <div style={styles.linkDiv}>
+                        <Link to= '/startpick'>
+                            <Button style={styles.btn2}>Pick Again</Button>
+                        </Link> 
+                        <Link to= '/profile'> 
+                            <Button style={styles.btn2}>I'm Done</Button>
+                        </Link>  
+                    </div>
 
                 </Card>
             </div>

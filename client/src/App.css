@@ -15,7 +15,7 @@
         170deg, 
         var(--color-1), 
         var(--color-2) 80%);
-    min-height: 100vh;
+    height: 150vh;
     display: flex;
     /* align-items:center; */
     justify-content: center

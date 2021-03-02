@@ -13,6 +13,7 @@ function PickCard() {
     console.log(id);
     const [picks, setPicks] = useState([]);
     const [childRefs, setChildRefs] = useState([]);
+    const [voteCount, setVoteCount] =useState(0);
     // let childRefs = [];
 
     useEffect(() => {
@@ -36,6 +37,7 @@ function PickCard() {
             status: false
         };
         axios.post('/api/vote', data);
+        setVoteCount(voteCount + 1);
     }
 
     function voteYes(id) {
@@ -44,12 +46,13 @@ function PickCard() {
             status: true
         };
         axios.post('/api/vote', data);
+        setVoteCount(voteCount + 1);
     }
 
-    if (vote === 10) {
+    if (voteCount === 10) {
         return <Redirect to={{
             // If someone goes to signup, this transfers the redirect
-            pathname: '/upicked/:id',
+            pathname: `/upicked/${id}`,
         }}
         />;
     }
@@ -92,12 +95,7 @@ function PickCard() {
             console.log(index, alreadyRemoved, id, childRefs);
             childRefs[index].current.swipe(direction); // Swipe the card!
         }
-        // if(direction === 'left') {
-        //     voteNo(id);
-        // }
-        // else if(direction === 'right') {
-        //     voteYes(id);
-        // }
+        
         console.log('You swiped: ' + direction + id);
     };
 
