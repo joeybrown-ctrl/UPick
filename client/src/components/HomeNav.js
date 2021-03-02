@@ -30,10 +30,10 @@ function HomeNav() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" style={styles.toggle}/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link style={styles.navLink} href="#about">About</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#functionality">Functionality</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#design">Design</Nav.Link>
-                        <Nav.Link style={styles.navLink} href="#creators">Developers</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#About">About</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#Functionality">Functionality</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#Design">Design</Nav.Link>
+                        <Nav.Link style={styles.navLink} href="#Developers">Developers</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

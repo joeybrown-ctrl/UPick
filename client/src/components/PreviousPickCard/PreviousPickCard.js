@@ -11,13 +11,23 @@ const PreviousPickCard = () => {
             backgroundColor: '#FFD217',
             border: '0',
             color: '#1a2930'
-        }
+        },
+
+        cardDiv: {
+            marginTop: '5vh',
+        },
+
+        card: {
+            backgroundColor: 'transparent',
+            height: '66vh',
+            textAlign: 'center'
+        },
     };
 
 
     return (
         
-        <div>
+        <div style={styles.cardDiv}>
             <Button style={styles.pickBtn} block>
                 <p>Your Pick with Marceline</p>
                 <h6>You Picked: "The Great British Baking Show"</h6>
@@ -33,15 +43,7 @@ const PreviousPickCard = () => {
                 <h6>You Picked: "Twin Peaks"</h6>
             </Button>
         </div>
-    //     <Card>
-    //         <Card.Header> <h6>{/* {props.picksData.Thing you want} */}</h6>
-    //         </Card.Header>
-    //         <Button style={styles.btn}>
-    //             {/* {props.picksData.Thing you want} */}
-
-    //         </Button>
-    //     </Card>
-    // );
+  
     );
 };
 

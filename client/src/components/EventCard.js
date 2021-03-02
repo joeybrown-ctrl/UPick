@@ -1,4 +1,4 @@
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import useGeoLocation from '../hooks/useGeoLocation';
@@ -14,7 +14,7 @@ function EventCard() {
     const [pick, toggleRedirect] = useState(0);
 
 
-    const ENABLED_COLOR = '#FBE18B';
+    const ENABLED_COLOR = '#f9f9f9c9';
     const DISABLED_COLOR = '#FFD217';
 
 
@@ -60,13 +60,13 @@ function EventCard() {
 
         pick: {
             margin: '5px',
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#FFD217',
             color: '#1a2930',
             border: '0'
         },
 
         cardDiv: {
-            marginTop: '10vh',
+            marginTop: '5vh',
             /* display: flex;
             justify-content: center;
             align-items: center */
@@ -79,9 +79,17 @@ function EventCard() {
 
         startBtn: {
             margin: '5px',
-            backgroundColor: '#FBE18B',
+            backgroundColor: '#f9f9f9c9',
             color: '#1a2930',
             border: '0'
+        },
+
+        icon: {
+            color: '#f9f9f9c9'
+        },
+
+        iconRow: {
+            paddingTop: '20px'
         }
     };
 
@@ -100,6 +108,20 @@ function EventCard() {
                 <Card style={styles.card}>
                     <br/>
                     <h5 style={styles.title}>Set Your Pick</h5>
+                    <Row style={styles.iconRow}>
+                        <Col>
+                            <i class="fas fa-utensils fa-lg" style={styles.icon}></i>
+                        </Col>
+                        <Col>
+                            <i class="fas fa-video fa-lg" style={styles.icon}></i>
+                        </Col>
+                        <Col>
+                            <i class="fas fa-utensils fa-lg" style={styles.icon}></i>
+                        </Col>
+                        <Col>
+                            <i class="fas fa-video fa-lg" style={styles.icon}></i>
+                        </Col>
+                    </Row>
                     <br/>
                     <Button 
                         style={

@@ -42,7 +42,7 @@ function FunctionCarousel() {
 
     return (
         <div style={styles.containerStyle}>
-            <Container>
+            <Container id="Functionality">
                 <ReactCardCarousel autoplay={true}>
                     <Image style={styles.image} src="../../assets/Mobile.png"/>
                     <Image style={styles.image} src="../../assets/Mobile.png"/>

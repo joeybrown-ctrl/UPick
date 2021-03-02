@@ -10,9 +10,9 @@ const LoginCard = () => {
     const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // For our redirector
+    // For our redirect
     const [redirectToSignup, toggleRedirect] = useState(false);
-    // This is the key part to our redirector. We can pull the prior location out here, if it exists
+    // This is the key part to our redirect. We can pull the prior location out here, if it exists
     const { from } = location.state || { from: { pathname: '/' } };
 
     const handleSubmit = event => {
@@ -69,7 +69,12 @@ const LoginCard = () => {
         },
         
         onboarding: {
-            color: '#f9f9f9c9',
+            // color: '#f9f9f9c9',
+            fontSize: '10pt',
+            color: '#1a2930',
+            backgroundColor: '#f9f9f9c9',
+            border: 0,
+            padding: '8px'
             /* color: #2d2d2dbb */
         },
         
@@ -111,11 +116,14 @@ const LoginCard = () => {
                             <Button style={styles.btn} type='submit' block>Login</Button>
                         </Form.Group>
                         <p style={styles.link} onClick={() => toggleRedirect(true)}> Need an account? Signup Here</p>
-                        <Link>
-                            <p style={styles.onboarding}> Click to see how UPick works.</p>
+                        <br/>
+                        <br/>
+                        <Link to={'/onboarding'}>
+                            <Button style={styles.onboarding} block> Learn how Upick works</Button>
                         </Link>
-                        <Link>
-                            <p></p>
+                        <br/>
+                        <Link to={'/ourapp'}>
+                            <Button style={styles.onboarding} block>Meet Upick's developers</Button>
                         </Link>
             
                     </Form>

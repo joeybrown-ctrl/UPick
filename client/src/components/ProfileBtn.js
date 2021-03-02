@@ -32,7 +32,7 @@ const ProfileBtn = () => {
             </Row>
             <br/>
             <Row>
-                <Button style={styles.btn} href='/friend' block>
+                <Button style={styles.btn} href='/startpick' block>
                     <i className="fas fa-users"></i> Friends
                 </Button>
             </Row>

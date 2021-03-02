@@ -13,13 +13,14 @@ function ProfilePicture() {
     const styles = {
         imageDiv: {
             justifyContent: 'center',
+            marginRight: '50px'
         },
 
         upload: {
-            width: 200,
-            height: 200,
+            width: 250,
+            height: 250,
             background: 'gold',
-            borderRadius: '100pt'
+            // borderRadius: '100pt',
         }
     };
  

@@ -4,7 +4,7 @@ import ActivityBtn from '../components/ActivityBtn';
 import ProfileBtn from '../components/ProfileBtn';
 // import ProfileBio from '../components/ProfileBio';
 import ProfileTitle from '../components/ProfileTitle';
-import PendingBtn from '../components/PendingBtn';
+// import PendingBtn from '../components/PendingBtn';
 import ProfilePicture from '../components/ProfilePicture';
 
 
@@ -24,7 +24,7 @@ function Profile() {
         },
 
         cardDiv: {
-            marginTop: '7vh',
+            marginTop: '2vh',
             // display: 'flex',
             // justifyContent: 'center',
             // alignItems: 'flex-start'
@@ -38,7 +38,7 @@ function Profile() {
                     {/* <CardImg/> */}
                     <ProfilePicture/>
                     <ProfileTitle/>
-                    <PendingBtn/>
+                    {/* <PendingBtn/> */}
                     <br/>
                     <ProfileBtn/>
                     <br/>
