@@ -29,7 +29,13 @@ function OnboardCarousel() {
 
         skipDiv: {
             color: '#f9f9f9c9',
-            fontSize: '10pt'
+            fontSize: '10pt',
+            paddingBottom: '10px'
+        },
+
+        captionDiv: {
+            paddingTop: '150px',
+            fontSize: '10.5pt'
         }
 
     }; 
@@ -48,64 +54,113 @@ function OnboardCarousel() {
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/SignupMobile.png"
+                                alt="Signup"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Create an account by singing up. Already have an account, click login.</p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/ProfileMobile.png"
+                                alt="Profile"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>View your profile! Upload a profile picture, view previous picks, or start a new pick. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/SetPickMobile.png"
+                                alt="Set Pick"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Choose a friend to start a pick with. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/StartPickMobile.png"
+                                alt="Start Pick"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Select options to start your pick, grab location for local results. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/PickMobile.png"
+                                alt="Voting"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Time to vote! Swipe right for choices you'd enjoy or left for no. You can also use the X and &hearts buttons to vote. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/UPickedMobile.png"
+                                alt="UPicked Results"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Once all votes are cast see which choice UPicked with your friend. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 style={styles.mobile}
                                 className="d-block w-100"
-                                src="../../assets/Mobile.png"
-                                alt="First slide"
+                                src="../../assets/WePickedMobile.png"
+                                alt="We Picked Results"
                                 fluid
                             />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>If you can't agree on a choice, no worries we will Pick! </p>
+                                </Carousel.Caption>
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                style={styles.mobile}
+                                className="d-block w-100"
+                                src="../../assets/PreviousPicksMobile.png"
+                                alt="Previous Picks"
+                                fluid
+                            />
+                            <div style={styles.captionDiv}>
+                                <Carousel.Caption>
+                                    <p>Access your previous picks from the profile page. </p>
+                                </Carousel.Caption>
+                            </div>
                         </Carousel.Item>
                     </Carousel>
                 </Card>
