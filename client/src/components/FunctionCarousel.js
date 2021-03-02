@@ -18,7 +18,7 @@ function FunctionCarousel() {
             disableBoxShadow: 'false',
             borderRadius: '40px'
         },
- 
+
         cardStyle: {
             height: '400px',
             width: '250px',

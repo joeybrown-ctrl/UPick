@@ -119,10 +119,10 @@ function UPickedCard(props) {
                     <br/>
                     <h4 style={styles.h4}>{results.Name}</h4>
                     
-                    <Link>
+                    <Link to={'/startpick'}>
                         <Button style={styles.btn1}>Start New Pick</Button>
                     </Link>
-                    <Link>
+                    <Link to={'/'}>
                         <Button style={styles.btn2}>I'm Done</Button>
                     </Link>
                     <Link style={styles.demoLink} to={{pathname:`/wepicked/${eventId}`}}>
