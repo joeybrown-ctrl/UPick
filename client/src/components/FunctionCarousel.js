@@ -34,7 +34,7 @@ function FunctionCarousel() {
         },
 
         image: {
-            height: '400px',
+            height: '430px',
             width: '225px',
             borderRadius: '20px',
         }
@@ -44,12 +44,15 @@ function FunctionCarousel() {
         <div style={styles.containerStyle}>
             <Container id="Functionality">
                 <ReactCardCarousel autoplay={true}>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
-                    <Image style={styles.image} src="../../assets/Mobile.png"/>
+                    <Image style={styles.image} src="../../assets/SignUpMobile.png"/>
+                    <Image style={styles.image} src="../../assets/ProfileMobile.png"/>
+                    <Image style={styles.image} src="../../assets/SetPickMobile.png"/>
+                    <Image style={styles.image} src="../../assets/StartPickMobile.png"/>
+                    <Image style={styles.image} src="../../assets/PickMobile.png"/>
+                    <Image style={styles.image} src="../../assets/UPickedMobile.png"/>
+                    <Image style={styles.image} src="../../assets/WePickedMobile.png"/>
+                    <Image style={styles.image} src="../../assets/PreviousPicksMobile.png"/>
+                    <Image style={styles.image} src="../../assets/LoginMobile.png"/>
                 </ReactCardCarousel>
             </Container>
         </div>
