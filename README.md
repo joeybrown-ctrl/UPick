@@ -6,6 +6,8 @@
 
 [For deployed version, click me](https://u-pick-app.herokuapp.com/)
 
+![example-gif]()
+
 <br>
 
   ## Table of Contents
