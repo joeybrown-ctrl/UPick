@@ -1,10 +1,12 @@
-# U-Pick
+# UPick
 
 ![license](https://img.shields.io/badge/License-MIT-blue.svg)
 
 **version 1.0.0**
 
 [For deployed version, click me](https://u-pick-app.herokuapp.com/)
+
+![example-gif]()
 
 <br>
 
@@ -26,15 +28,23 @@
 
   ## Description 
 
-U-Pick is an app designed to help indecisive users choose entertainment and dining options based on the location of the user. The user may also invite their partner and/or friends. Once the user is signed in, they are sent a verification email, a profile is created and the user can create a 'pick' by inviting friends and choosing entertainment and/or dining. 
+UPick is an app designed to help indecisive users choose entertainment and dining options based on the location of the user. The user may also invite their partner and/or friends. Once the user is signed in, they are sent a verification email, a profile is created and the user can create a 'pick' by inviting friends and choosing entertainment and/or dining. 
 
-Utilizing two different API calls run through an algorithm, U-pick shows the user and whomever they have invited a series of entertainment/dining options, allowing both the user and the invitee to swipe right or left (yes and no respectively), showing the matching 'picks' to each person. If no matches occur, then after ten tries, U-Pick reveals a 'pick' of its own to help the user and invitee decide on the course of their evening.
+Utilizing two different API calls run through an algorithm, UPick shows the user and whomever they have invited a series of entertainment/dining options, allowing both the user and the invitee to swipe right or left (yes and no respectively), showing the matching 'picks' to each person. If no matches occur, UPick reveals a 'pick' of its own to help the user and invitee decide on the course of their evening.
 
-U-Pick is built using React, React-Bootstrap, and React Router on the Front End. The Back End is built with Node.js, Express routes, and Sequelize for databasing. The Zomato API and Rapid API (Unogsng) are used to retrieve restaurant and entertainment data. U-pick was tested with Insomnia, linted using ES Lint, built on Visual Studio Code, and deployed to Heroku. 
+UPick is built using React, React-Bootstrap, and React Router on the Front End. The wireframe shows the steps UI was broken into as the process was visualized. Mobile-first and responsive design were prioritized in development.
 
-  <hr>
+ <br>
 
-![image of U-Pick's landing page]()
+![image of wireframe]()
+
+<br>
+
+The Back End is built with Node.js, Express routes, and MySQL/ORMs for data. The Zomato API and Rapid API (Unogsng) are used to retrieve restaurant and streaming services data. UPick was tested with Insomnia, linted using ES Lint, built on Visual Studio Code, and deployed to Heroku with a JawsDB database. 
+
+<br>
+
+![image of UPick]()
 
   <hr>
 
@@ -44,7 +54,7 @@ U-Pick is built using React, React-Bootstrap, and React Router on the Front End.
   AS an indecisive person,
   WHEN I enter my location, a friend's email and choose entertainment and/or dining options,
   THEN my friend and I are presented 'picks' that we can swipe right (yes) or swipe left (no) with the matching picks presented to each of us on our own devices.
-  WHEN, in the case of there being no agreement between my friend and I, U-Pick chooses the 'pick' for us.
+  WHEN, in the case of there being no agreement between my friend and I, UPick chooses the 'pick' for us.
   ```
 
   ### Acceptance Criteria
@@ -68,7 +78,6 @@ U-Pick is built using React, React-Bootstrap, and React Router on the Front End.
 
   Git clone to local repository and run 'npm install' within terminal to install dependencies.
   
-
   <br>
 
   ## Built With
@@ -99,10 +108,11 @@ U-Pick is built using React, React-Bootstrap, and React Router on the Front End.
 
   ## Contributors 
 
-  ### Team Copyright:
+  ![image of UPick's Devs]()
+
+  <br>
 
 * [Christina Flores](https://github.com/cdflori)
-* [Chris Falk](https://github.com/chrisfalk88)
 * [Joey Brown](https://github.com/joeybrown-ctrl)
 * [Shoshanah Lo Greco](https://github.com/slogreco)
 
