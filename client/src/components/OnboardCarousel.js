@@ -116,7 +116,7 @@ function OnboardCarousel() {
                             />
                             <div style={styles.captionDiv}>
                                 <Carousel.Caption>
-                                    <p>Time to vote! Swipe right for choices you'd enjoy or left for no. You can also use the X and &hearts buttons to vote. </p>
+                                    <p>Time to vote! Swipe right for choices you'd enjoy or left for no. You can also use the X and Heart buttons to vote. </p>
                                 </Carousel.Caption>
                             </div>
                         </Carousel.Item>

@@ -16,7 +16,7 @@ function JumboImage() {
 
     return(
         <div>
-            <Image src="../../assets/JumboImage.png" fluid style={styles.jumboImg} />
+            <Image src="../../assets/UpickJumbo.png" fluid style={styles.jumboImg} />
         </div>
     );
 }
