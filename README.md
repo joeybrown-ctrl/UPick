@@ -6,7 +6,7 @@
 
 [For deployed version, click me](https://u-pick-app.herokuapp.com/)
 
-![example-gif](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/upickGif.gif)
+![example-gif](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/upickgif2.gif)
 
 <br>
 
