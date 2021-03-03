@@ -1,5 +1,5 @@
-import { Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card, Button, Row } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
 // import TinderCard from 'react-tinder-card';
 
 function WePickedCard(props) {
@@ -9,7 +9,7 @@ function WePickedCard(props) {
     const styles = {
 
         cardDiv: {
-            marginTop: '5vh',
+            marginTop: '2vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start',
@@ -73,7 +73,7 @@ function WePickedCard(props) {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
-            width: '245px'
+            // width: '245px'
 
         },
 
@@ -85,7 +85,7 @@ function WePickedCard(props) {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
-            width: '245px'
+            // width: '245px'
         },
 
         linkDiv: {
@@ -109,12 +109,11 @@ function WePickedCard(props) {
                     <br/>
                     <h4 style={styles.h4}>{results.Name}</h4>
                     <div style={styles.linkDiv}>
-                        <Link to= '/startpick'>
-                            <Button style={styles.btn2}>Pick Again</Button>
-                        </Link> 
-                        <Link to= '/profile'> 
-                            <Button style={styles.btn2}>I'm Done</Button>
-                        </Link>  
+                        <Row>
+                            <Button style={styles.btn2} href='/startpick' block>Pick Again</Button>
+                        
+                            <Button style={styles.btn2} href='/profile' block>I'm Done</Button>
+                        </Row>
                     </div>
 
                 </Card>

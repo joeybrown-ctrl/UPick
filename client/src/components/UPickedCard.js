@@ -1,4 +1,4 @@
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 // import TinderCard from 'react-tinder-card';
@@ -11,7 +11,7 @@ function UPickedCard(props) {
     const styles = {
 
         cardDiv: {
-            marginTop: '5vh',
+            marginTop: '2vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'flex-start',
@@ -75,7 +75,7 @@ function UPickedCard(props) {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
-            width: '245px'
+            // width: '245px'
 
         },
 
@@ -87,7 +87,7 @@ function UPickedCard(props) {
             fontWeight: 'bold',
             fontSize: '15pt',
             letterSpacing: '2px',
-            width: '245px'
+            // width: '245px'
         }, 
 
         demoLink: {
@@ -118,16 +118,19 @@ function UPickedCard(props) {
                     </div>
                     <br/>
                     <h4 style={styles.h4}>{results.Name}</h4>
-                    
-                    <Link to={'/startpick'}>
-                        <Button style={styles.btn1}>Start New Pick</Button>
-                    </Link>
-                    <Link to={'/'}>
-                        <Button style={styles.btn2}>I'm Done</Button>
-                    </Link>
-                    <Link style={styles.demoLink} to={{pathname:`/wepicked/${eventId}`}}>
-                        <p style={styles.demoText}>We Picked Demo</p>
-                    </Link>
+                    <Row>
+                        {/* <Link to={'/startpick'}> */}
+                        <Button style={styles.btn1} href='/startpick' block>Start New Pick</Button>
+                        {/* </Link> */}
+                        {/* <Link to={'/'}> */}
+                        <Button style={styles.btn2} href='/' block>I'm Done</Button>
+                        {/* </Link> */}
+                    </Row>
+                    <div>
+                        <Link style={styles.demoLink} to={{pathname:`/wepicked/${eventId}`}}>
+                            <p style={styles.demoText}>We Picked Demo</p>
+                        </Link>
+                    </div>
                 </Card>
             </div>
 

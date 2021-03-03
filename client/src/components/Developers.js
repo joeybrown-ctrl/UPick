@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
+// import { Link } from 'react-router-dom';
 
 
 function Developers() {
@@ -42,6 +43,12 @@ function Developers() {
 
         link: {
             color: '#1a2930'
+        },
+
+        github: {
+            paddingTop: '20px',
+            color: '#1a2930',
+            fontSize: '14pt'
         }
 
     };
@@ -130,6 +137,13 @@ function Developers() {
                         </Row>
                     </Col>
                 </Row>
+                {/* <div style={styles.github}> */}
+                <Row>
+                    <a href='https://github.com/joeybrown-ctrl/UPick'>
+                        <p style={styles.github}>Want to checkout our Upick repo? View on Github here.</p>
+                    </a>
+                </Row>
+                {/* </div> */}
             </Container>
 
         </div>

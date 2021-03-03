@@ -17,7 +17,7 @@ function Profile() {
             paddingRight: '35px',
             paddingLeft: '35px',
             maxWidth: '85vw',
-            height: '100vh',
+            height: '85vh',
             borderRadius: '20px',
             boxShadow: '0px 18px 53px 0px rgba(0,0,0,0.3),'
         },
@@ -27,6 +27,10 @@ function Profile() {
             // display: 'flex',
             // justifyContent: 'center',
             // alignItems: 'flex-start'
+        },
+
+        picDiv: {
+            justifyContent: 'center'
         }
     };
 

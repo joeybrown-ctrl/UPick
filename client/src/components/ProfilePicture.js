@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ImageUpload from 'image-upload-react';
+// import { Row } from 'react-bootstrap';
 //important for getting nice style.
 import 'image-upload-react/dist/index.css';
  
@@ -17,9 +18,10 @@ function ProfilePicture() {
         },
 
         upload: {
-            width: 250,
+            width: 246,
             height: 250,
             background: 'gold',
+            // margin: '20px'
             // borderRadius: '100pt',
         }
     };
@@ -31,8 +33,9 @@ function ProfilePicture() {
                 imageSrc={imageSrc}
                 setImageSrc={setImageSrc}
                 style={styles.upload}
+                fluid
             />
-        </div>
+        </div>    
     );
 }
  
