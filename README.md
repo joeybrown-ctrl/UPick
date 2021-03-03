@@ -36,7 +36,7 @@ UPick is built using React, React-Bootstrap, and React Router on the Front End. 
 
  <br>
 
-![image of wireframe]()
+![image of wireframe](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/upickWireframe.png)
 
 <br>
 
