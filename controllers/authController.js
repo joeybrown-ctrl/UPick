@@ -55,11 +55,7 @@ router.post('/signup', async (req, res) => {
         const msg = {
             to: req.body.email, // Change to your recipient
             from: 'u.pick.project@gmail.com', // Change to your verified sender
-            subject: 'Welcome to U-Pick',
-            text:
-                'Thank you for signing up with U-Pick. Your account is now activated. U-Pick is an app designed to help indecisive people choose entertainment and dining options based on location. Once you are signed in, you can create a profile and start the pick process by inviting friends and choosing entertainment and/or dining.',
-            html:
-                '<h1><strong>Thank you for signing up with U-Pick. Your account is now activated.</strong></h1><p>U-Pick is an app designed to help indecisive people choose entertainment and dining options based on location. Once you are signed in, you can create a profile and start the pick process by inviting friends and choosing entertainment and/or dining.</p>',
+            templateId: `${process.env.SENDGRID_TEMPLATE_ID}`, // This is the template id to our specific version.
         };
         await sgMail
             .send(msg);
