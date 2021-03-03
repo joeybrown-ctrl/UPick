@@ -6,7 +6,7 @@
 
 [For deployed version, click me](https://u-pick-app.herokuapp.com/)
 
-![example-gif]()
+![example-gif](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/upickGif.gif)
 
 <br>
 
@@ -44,7 +44,7 @@ The Back End is built with Node.js, Express routes, and MySQL/ORMs for data. The
 
 <br>
 
-![image of UPick]()
+![image of UPick](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/UPick.png)
 
   <hr>
 
@@ -108,7 +108,7 @@ The Back End is built with Node.js, Express routes, and MySQL/ORMs for data. The
 
   ## Contributors 
 
-  ![image of UPick's Devs]()
+  ![image of UPick's Devs](https://raw.githubusercontent.com/joeybrown-ctrl/UPick/main/client/public/assets/readme/UPickDev.png)
 
   <br>
 
