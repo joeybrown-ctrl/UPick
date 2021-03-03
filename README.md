@@ -86,6 +86,7 @@ The Back End is built with Node.js, Express routes, and MySQL/ORMs for data. The
 * [React Router](https://reactrouter.com/web/guides/quick-start)
 * [React Bootstrap](https://react-bootstrap.github.io/)
 * [SendGrid](https://sendgrid.com)
+* [MySQL](https://dev.mysql.com/doc/)
 * [Sequelize](https://sequelize.org/master/index.html)
 * [Node.js](https://nodejs.org/en/about/)
 * [Express](https://expressjs.com/)
